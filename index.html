@@ -6,22 +6,33 @@
     <title>IscoTech Academy | Homa Bay Town</title>
     <style>
         :root { --navy: #000814; --gold: #ffc300; --accent: #003566; --white: #ffffff; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--navy); color: var(--white); margin: 0; padding: 0; }
-        header { background: linear-gradient(rgba(0,8,20,0.95), rgba(0,8,20,0.95)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80'); padding: 40px 20px; border-bottom: 5px solid var(--gold); text-align: center; }
-        .logo-text { font-size: 2em; font-weight: 800; color: var(--gold); margin: 0; text-transform: uppercase; }
-        .address-bar { background: var(--gold); color: var(--navy); padding: 10px; font-weight: 800; text-align: center; position: sticky; top: 0; z-index: 100; font-size: 0.9em; }
+        body { font-family: 'Poppins', sans-serif; background: var(--navy); color: var(--white); margin: 0; padding: 0; }
+        
+        /* Sticky Location Bar */
+        .address-bar { background: var(--gold); color: var(--navy); padding: 12px; font-weight: 800; text-align: center; position: sticky; top: 0; z-index: 1000; font-size: 0.9em; border-bottom: 2px solid #fff; }
+
+        header { background: linear-gradient(rgba(0,8,20,0.9), rgba(0,8,20,0.9)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80'); padding: 50px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        .logo-text { font-size: 2.2em; font-weight: 800; color: var(--gold); margin: 0; }
+
         .container { padding: 20px; max-width: 800px; margin: auto; }
-        .course-box { background: var(--accent); margin-bottom: 12px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,195,0,0.2); }
+        
+        /* Info Box */
+        .info-box { background: rgba(255,195,0,0.1); border: 1px dashed var(--gold); padding: 15px; border-radius: 12px; margin-bottom: 25px; text-align: left; }
+
+        /* Accordion Courses */
+        .course-box { background: var(--accent); margin-bottom: 12px; border-radius: 15px; overflow: hidden; border: 1px solid rgba(255,195,0,0.2); }
         .course-btn { width: 100%; padding: 20px; background: none; border: none; color: var(--gold); text-align: left; font-size: 1.1em; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; }
-        .course-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0,0,0,0.2); }
-        .inner { padding: 15px; font-size: 0.9em; }
-        .contact-hub { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 20px 0; }
-        .hub-btn { padding: 12px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; font-size: 0.75em; text-align: center; }
-        .wa { background: #25d366; } .em { background: #ea4335; } .ph { background: #34b7f1; }
-        .money-btn { display: block; background: linear-gradient(45deg, #ffc300, #ff9500); color: var(--navy); padding: 20px; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 1.2em; text-align: center; margin: 20px 0; box-shadow: 0 5px 15px rgba(255,195,0,0.3); }
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); }
-        .modal-content { background: #fff; color: #222; margin: 10% auto; padding: 25px; width: 85%; max-width: 400px; border-radius: 20px; }
-        input, select, textarea { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; }
+        .course-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0,0,0,0.3); }
+        .inner { padding: 20px; font-size: 0.95em; }
+        li { margin-bottom: 8px; list-style: none; }
+        li::before { content: "⚡ "; color: var(--gold); }
+
+        .cta-btn { display: block; background: linear-gradient(45deg, #ffc300, #ff9500); color: var(--navy); padding: 20px; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 1.3em; text-align: center; margin: 30px 0; cursor: pointer; border: none; width: 100%; }
+
+        /* Modal Form */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); overflow-y: auto; }
+        .modal-content { background: #fff; color: #222; margin: 5% auto; padding: 30px; width: 85%; max-width: 420px; border-radius: 25px; }
+        input, select, textarea { width: 100%; padding: 14px; margin: 10px 0; border: 2px solid #f1f5f9; border-radius: 12px; box-sizing: border-box; }
     </style>
 </head>
 <body>
@@ -30,75 +41,109 @@
 
 <header>
     <h1 class="logo-text">ISCOTECH ACADEMY</h1>
-    <p>Professional ICT Training | Full Day Access</p>
+    <p>Professional ICT Training | Established 2026</p>
 </header>
 
 <div class="container">
-    <div class="contact-hub">
-        <a href="https://wa.me/254746939408" class="hub-btn wa">WhatsApp</a>
-        <a href="mailto:isco53078@gmail.com" class="hub-btn em">Email</a>
-        <a href="tel:+254746939408" class="hub-btn ph">Call Now</a>
+    <div class="info-box">
+        <h4 style="margin:0; color:var(--gold);">🕒 Teaching Hours:</h4>
+        <p style="margin:5px 0; font-size:0.9em;">We offer <b>Full Day Classes (8:00 AM - 5:00 PM)</b>. You are free to choose the hours that fit your schedule!</p>
     </div>
 
-    <h3 style="color:var(--gold);">Tap to see what you will learn:</h3>
+    <h3 style="text-align:left; color:var(--gold);">Explore our Courses:</h3>
 
     <div class="course-box">
-        <button class="course-btn">🐍 Python & AI Development</button>
-        <div class="course-content"><div class="inner">Learn Logic, Automation, and building Real Apps.</div></div>
+        <button class="course-btn">🐍 Python Programming <span>+</span></button>
+        <div class="course-content">
+            <div class="inner">
+                <strong>Skills Gained:</strong>
+                <ul>
+                    <li><li>Basic & Advanced Syntax</li></li>
+                    <li><li>Data Automation & AI</li></li>
+                    <li><li>Desktop App Development</li></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="course-box">
-        <button class="course-btn">🌐 JavaScript & Web Design</button>
-        <div class="course-content"><div class="inner">Build Professional Sites & Portfolios.</div></div>
+        <button class="course-btn">🌐 JavaScript & Web Design <span>+</span></button>
+        <div class="course-content">
+            <div class="inner">
+                <strong>Skills Gained:</strong>
+                <ul>
+                    <li><li>Responsive UI/UX Design</li></li>
+                    <li><li>JavaScript Logic & DOM</li></li>
+                    <li><li>Hosting & GitHub Management</li></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="course-box">
-        <button class="course-btn">🔧 Technical ICT Skills</button>
-        <div class="course-content"><div class="inner">PC Repair, Networking, and Software Engineering.</div></div>
+        <button class="course-btn">🔧 Technical ICT Skills <span>+</span></button>
+        <div class="course-content">
+            <div class="inner">
+                <strong>Skills Gained:</strong>
+                <ul>
+                    <li><li>PC & Laptop Hardware Repair</li></li>
+                    <li><li>Networking & LAN Setup</li></li>
+                    <li><li>OS & Software Installation</li></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <a href="https://otieu.com/4/10560010" class="money-btn" onclick="openEnrollment()">Register & View Fees</a>
-
-    <p style="text-align:center; opacity:0.6; font-size:0.8em;">🕒 Classes run all day. Join anytime!</p>
+    <button class="cta-btn" onclick="openForm()">Register to Join</button>
 </div>
 
 <div id="enrollModal" class="modal">
     <div class="modal-content">
-        <span id="close" style="float:right; cursor:pointer; font-size:30px;">&times;</span>
-        <h2 style="margin:0;">Final Enrollment</h2>
-        <p style="font-size:0.8em; color:red;">We will chat first to agree on your study hours.</p>
-        <form action="https://formspree.io/f/xnjzwawl" method="POST">
+        <span id="close" style="float:right; cursor:pointer; font-size:35px; color:#aaa;">&times;</span>
+        <h2 style="color:var(--navy); margin:0;">Application Form</h2>
+        <p style="font-size:0.85em;">Fill your details to get the Fee Structure.</p>
+        
+        <form id="applyForm" action="https://formspree.io/f/xnjzwawl" method="POST">
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="tel" name="phone" placeholder="WhatsApp Number" required>
+            <textarea name="timing" placeholder="Preferred Study Hours (e.g. 10am-12pm)" rows="2" required></textarea>
             <select name="course">
-                <option>Python</option>
-                <option>JavaScript</option>
-                <option>Technical ICT</option>
+                <option>Python Development</option>
+                <option>JavaScript & Web</option>
+                <option>Technical ICT Skills</option>
             </select>
-            <button type="submit" class="money-btn" style="width:100%; border:none;">Complete Application</button>
+            
+            <p style="font-size: 0.8em; color: #666; margin-bottom: 15px;">
+                Note: Fees are discussed during our first physical meeting.
+            </p>
+            
+            <button type="submit" class="cta-btn" style="width:100%; border:none;">Submit Application</button>
         </form>
     </div>
 </div>
 
 <script>
-    // Accordion
+    // 1. Accordion Logic
     var acc = document.getElementsByClassName("course-btn");
     for (var i = 0; i < acc.length; i++) {
-        acc[i].onclick = function() {
+        acc[i].addEventListener("click", function() {
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
             panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
-        }
+        });
     }
 
-    // Modal Control
-    const m = document.getElementById("enrollModal");
-    const s = document.getElementById("close");
-    function openEnrollment() { 
-        // This gives you time to earn from the click before the form shows
-        setTimeout(() => { m.style.display = "block"; }, 2000); 
-    }
-    s.onclick = () => m.style.display = "none";
+    // 2. Modal Logic
+    const modal = document.getElementById("enrollModal");
+    function openForm() { modal.style.display = "block"; }
+    document.getElementById("close").onclick = () => modal.style.display = "none";
+
+    // 3. THE MONEY LOGIC: After submitting the form, trigger the ad
+    document.getElementById("applyForm").onsubmit = function() {
+        // This opens your SmartLink in a new tab when they submit
+        window.open("https://otieu.com/4/10560010", "_blank");
+        return true; // Allows the Formspree submission to continue
+    };
 </script>
 
 </body>
