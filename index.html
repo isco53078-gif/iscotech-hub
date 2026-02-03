@@ -3,92 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IscoTech Academy | The Future of Coding</title>
+    <title>IscoTech Academy | Professional ICT Training</title>
     
     <style>
         :root { --navy: #000814; --gold: #ffc300; --accent: #003566; --white: #ffffff; }
         body { font-family: 'Poppins', 'Segoe UI', sans-serif; background-color: var(--navy); color: var(--white); margin: 0; padding: 0; line-height: 1.6; }
         
         header { 
-            background: linear-gradient(rgba(0, 8, 20, 0.85), rgba(0, 53, 102, 0.85)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80'); 
-            background-size: cover; background-position: center; padding: 100px 20px; border-bottom: 4px solid var(--gold); text-align: center;
+            background: linear-gradient(rgba(0, 8, 20, 0.9), rgba(0, 53, 102, 0.9)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80'); 
+            background-size: cover; background-position: center; padding: 60px 20px; border-bottom: 5px solid var(--gold); text-align: center;
         }
-        .logo-text { font-size: 3em; font-weight: 800; color: var(--gold); margin: 0; text-transform: uppercase; letter-spacing: 3px; }
-        .motto { font-size: 1.1em; color: #cbd5e1; margin-top: 10px; }
-
-        .container { padding: 40px 20px; max-width: 900px; margin: auto; }
+        .logo-text { font-size: 2.2em; font-weight: 800; color: var(--gold); margin: 0; text-transform: uppercase; }
         
-        /* Contact Hub */
-        .contact-hub { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 30px 0; }
-        .hub-btn { padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 0.9em; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; }
-        .wa { background: #25d366; color: white; }
-        .em { background: #ea4335; color: white; }
-        .ph { background: #34b7f1; color: white; }
-        .hub-btn:hover { opacity: 0.8; transform: scale(1.05); }
+        .container { padding: 30px 20px; max-width: 900px; margin: auto; }
+        
+        /* Schedule & Location Bar */
+        .info-bar { background: var(--gold); color: var(--navy); padding: 12px; border-radius: 8px; font-weight: bold; margin-bottom: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; font-size: 0.95em; border: 2px solid var(--white); }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .course-card { background: var(--accent); padding: 25px; border-radius: 15px; border-left: 5px solid var(--gold); text-align: left; }
-        .course-card h3 { color: var(--gold); margin-top: 0; }
+        /* Course Sections */
+        .course-section { background: var(--accent); border-radius: 20px; padding: 25px; margin-bottom: 30px; border-left: 8px solid var(--gold); text-align: left; transition: 0.3s; }
+        .course-section:hover { transform: scale(1.02); background: #002855; }
+        .course-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,195,0,0.2); padding-bottom: 10px; margin-bottom: 15px; }
+        .course-header h2 { color: var(--gold); margin: 0; font-size: 1.5em; }
+        
+        ul.skills-list { list-style: none; padding: 0; }
+        ul.skills-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; font-size: 0.95em; }
+        ul.skills-list li::before { content: "⚡"; color: var(--gold); }
 
-        .cta-enroll { background: linear-gradient(45deg, #ffc300, #ff9500); color: var(--navy); padding: 22px; border: none; border-radius: 50px; font-weight: 800; font-size: 1.3em; cursor: pointer; width: 100%; max-width: 400px; text-transform: uppercase; margin-top: 30px; }
+        .contact-hub { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 30px; }
+        .hub-btn { padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 0.85em; text-align: center; color: white; transition: 0.2s; }
+        .wa { background: #25d366; } .em { background: #ea4335; } .ph { background: #34b7f1; }
+        .hub-btn:hover { filter: brightness(1.2); }
+
+        .cta-enroll { background: linear-gradient(45deg, #ffc300, #ff9500); color: var(--navy); padding: 20px 40px; border: none; border-radius: 50px; font-weight: 800; font-size: 1.2em; cursor: pointer; text-transform: uppercase; width: 100%; max-width: 400px; box-shadow: 0 5px 15px rgba(255,195,0,0.3); }
 
         /* Modal */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); overflow-y: auto; }
-        .modal-content { background: #fff; color: #222; margin: 5% auto; padding: 35px; width: 90%; max-width: 450px; border-radius: 30px; }
-        input, select { width: 100%; padding: 14px; margin: 10px 0; border: 2px solid #f1f5f9; border-radius: 12px; font-size: 16px; }
+        .modal-content { background: #fff; color: #222; margin: 5% auto; padding: 30px; width: 85%; max-width: 450px; border-radius: 25px; }
+        input, select, textarea { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 10px; font-family: inherit; }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="background: var(--gold); color: var(--navy); padding: 5px 15px; border-radius: 50px; font-weight: bold; display: inline-block; margin-bottom: 15px;">📍 B2, HOMA BAY TOWN</div>
     <h1 class="logo-text">ISCOTECH ACADEMY</h1>
-    <div class="motto">"Coding the Future, One Line at a Time"</div>
+    <p style="color:var(--white); margin: 5px 0;">Empowering Homa Bay through Technology</p>
 </header>
 
 <div class="container">
+    <div class="info-bar">
+        <span>📍 Opposite Equity Bank (B2)</span>
+        <span>🕒 Open All Day: 8:00 AM - 5:00 PM</span>
+    </div>
+
     <div class="contact-hub">
         <a href="https://wa.me/254746939408" class="hub-btn wa">WhatsApp</a>
-        <a href="mailto:isco53078@gmail.com" class="hub-btn em">Email Me</a>
+        <a href="mailto:isco53078@gmail.com" class="hub-btn em">Email</a>
         <a href="tel:+254746939408" class="hub-btn ph">Call Now</a>
     </div>
 
-    <h2 style="text-align: left; border-left: 5px solid var(--gold); padding-left: 15px;">FEATURED PROGRAMS</h2>
-    <div class="grid">
-        <div class="course-card">
-            <h3>🐍 Python & AI</h3>
-            <p>Master coding for data science and automation.</p>
-        </div>
-        <div class="course-card">
-            <h3>🌐 Web Stack (JS)</h3>
-            <p>Build dynamic sites with JavaScript, HTML, and CSS.</p>
-        </div>
-        <div class="course-card">
-            <h3>🔧 Technical ICT</h3>
-            <p>Computer Repair, Networking, and Software Engineering.</p>
-        </div>
+    <div style="background: rgba(255,195,0,0.1); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 1px dashed var(--gold); text-align: left;">
+        <h3 style="color: var(--gold); margin-top: 0;">📅 Flexible Learning</h3>
+        <p>We are open the <b>whole day</b>. Students are free to choose their most convenient hours for practicals and theory. Our labs are ready when you are!</p>
     </div>
 
-    <button class="cta-enroll" id="openForm">Enroll & Pay Fee</button>
+    <div class="course-section">
+        <div class="course-header">
+            <h2>🐍 Python & AI</h2>
+        </div>
+        <p>Master the most versatile programming language in the world.</p>
+        <ul class="skills-list">
+            <li>Logic Building & Coding Fundamentals</li>
+            <li>Data Structures (Lists, Dictionaries)</li>
+            <li>Automation Scripts & Bot Development</li>
+            <li>Building Real-world Desktop Apps</li>
+        </ul>
+    </div>
+
+    <div class="course-section">
+        <div class="course-header">
+            <h2>🌐 Web Design & JS</h2>
+        </div>
+        <p>Learn to build and host modern, responsive websites.</p>
+        <ul class="skills-list">
+            <li>UI/UX Design with HTML5 & CSS3</li>
+            <li>Interactive Features with JavaScript</li>
+            <li>Mobile-friendly Responsive Layouts</li>
+            <li>GitHub Hosting & Portfolio Setup</li>
+        </ul>
+    </div>
+
+    <div class="course-section">
+        <div class="course-header">
+            <h2>🔧 Technical ICT</h2>
+        </div>
+        <p>Become a certified technician and system administrator.</p>
+        <ul class="skills-list">
+            <li>Laptop/PC Hardware Repair</li>
+            <li>Software Installation & Windows Management</li>
+            <li>LAN & Wi-Fi Networking Setup</li>
+            <li>System Security & Antivirus Deployment</li>
+        </ul>
+    </div>
+
+    <center><button class="cta-enroll" id="openForm">Register Today</button></center>
 </div>
 
 <div id="enrollModal" class="modal">
     <div class="modal-content">
-        <span id="close" style="float:right; cursor:pointer; font-size:40px; color:#ccc;">&times;</span>
-        <h2 style="color:var(--navy); margin:0;">Join the Academy</h2>
-        <p style="font-size: 0.9em; background: #fffde7; padding: 10px; border-radius: 8px;"><b>M-PESA:</b> Pay 200/- to 0746939408 to register.</p>
+        <span id="close" style="float:right; cursor:pointer; font-size:35px; color:#aaa;">&times;</span>
+        <h2 style="color:var(--navy); margin:0;">Enrollment Form</h2>
+        <p style="font-size: 0.85em;">Tell us your preferred study time below.</p>
 
         <form action="https://formspree.io/f/xnjzwawl" method="POST" enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="tel" name="phone" placeholder="WhatsApp Number" required>
-            <input type="email" name="email" placeholder="Email Address" required>
+            
+            <label style="font-size:14px; font-weight:bold;">When do you want to learn?</label>
+            <select name="preferred_time">
+                <option>Morning (8AM - 12PM)</option>
+                <option>Afternoon (1PM - 5PM)</option>
+                <option>Full Day Intensive</option>
+            </select>
+
+            <label style="font-size:14px; font-weight:bold;">Course:</label>
             <select name="course">
                 <option>Python Development</option>
-                <option>Web & JavaScript</option>
-                <option>Software Engineering</option>
+                <option>JavaScript & Web</option>
+                <option>Technical ICT</option>
             </select>
-            <input type="file" name="doc" accept="image/*,.pdf">
-            <button type="submit" class="cta-enroll" style="width:100%; margin-top:15px;">Submit Details</button>
+            
+            <p style="font-size: 0.8em; color: #16a34a; background: #f0fdf4; padding: 10px; border-radius: 5px; border: 1px solid #16a34a; margin-top:10px;">
+                <b>M-PESA:</b> Pay 200/- to 0746939408 to secure your slot.
+            </p>
+            <button type="submit" class="cta-enroll" style="width:100%; margin-top:10px;">Confirm & Submit</button>
         </form>
     </div>
 </div>
