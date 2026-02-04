@@ -3,166 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IscoTech Digital Hub | Academy & Career AI</title>
+    <title>IscoTech Hub | Your Future is Calling</title>
     <style>
-        :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; --white: #ffffff; }
-        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; color: #333; line-height: 1.6; }
+        :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; --white: #ffffff; --red: #ff4d4d; }
+        body { font-family: 'Poppins', sans-serif; background: #f0f2f5; margin: 0; color: #333; line-height: 1.6; }
         
-        /* Navigation & Header */
-        header { background: var(--navy); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
-        .logo { font-size: 2.2em; font-weight: 900; color: var(--gold); margin: 0; }
-        
-        .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
-        .section-card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 25px; }
-        h2 { color: var(--navy); border-left: 5px solid var(--gold); padding-left: 15px; margin-bottom: 20px; }
+        /* Ad-Style Header */
+        header { background: linear-gradient(rgba(0,8,20,0.85), rgba(0,8,20,0.85)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800'); background-size: cover; color: white; padding: 100px 20px; text-align: center; border-bottom: 8px solid var(--gold); }
+        .logo { font-size: 3.5em; font-weight: 900; color: var(--gold); margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero-tag { font-size: 1.3em; font-weight: 300; letter-spacing: 1px; margin-top: 10px; }
 
-        /* Academy Styling */
-        .course-box { background: #f9f9f9; padding: 15px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #eee; }
-        .badge { background: var(--gold); color: var(--navy); padding: 3px 8px; border-radius: 5px; font-size: 0.8em; font-weight: bold; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
+        .part-section { background: white; padding: 40px; border-radius: 35px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); margin-bottom: 50px; }
 
-        /* Career AI Styling */
-        .ai-engine { background: #eff6ff; border: 2px solid #3b82f6; padding: 20px; border-radius: 15px; }
-        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 10px; box-sizing: border-box; }
-        
-        /* Payment Gate */
-        .lock-box { background: #fffdf0; border: 2px dashed #e67e22; padding: 20px; border-radius: 15px; text-align: center; margin-top: 15px; }
-        .btn { width: 100%; padding: 15px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 1em; transition: 0.3s; display: block; text-decoration: none; text-align: center; margin-top: 10px; }
-        .btn-navy { background: var(--navy); color: white; }
+        /* Sweet Advertising Titles */
+        h2 { color: var(--navy); font-size: 2.2em; margin-bottom: 10px; text-transform: uppercase; }
+        .sweet-text { color: #e67e22; font-weight: bold; font-size: 1.1em; margin-bottom: 20px; display: block; }
+
+        /* Course Grid */
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .skill-card { background: #fffcf0; border: 2px solid #eee; padding: 15px; border-radius: 15px; border-top: 5px solid var(--gold); text-align: center; }
+        .time-tag { background: var(--navy); color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.75em; display: inline-block; margin-bottom: 10px; }
+
+        /* Career AI Section */
+        .ai-promo { background: #eef2ff; border: 3px solid #4f46e5; position: relative; }
+        .worry-box { font-style: italic; background: white; padding: 15px; border-radius: 15px; border-left: 5px solid var(--red); margin-bottom: 20px; }
+
+        /* Buttons & Forms */
+        .enroll-box { background: var(--navy); color: white; padding: 30px; border-radius: 20px; margin-top: 30px; }
+        input, select { width: 100%; padding: 15px; margin: 10px 0; border-radius: 10px; border: none; font-size: 1em; }
+        .btn { width: 100%; padding: 20px; border: none; border-radius: 50px; font-weight: 900; cursor: pointer; font-size: 1.2em; text-transform: uppercase; transition: 0.3s; }
+        .btn-gold { background: var(--gold); color: var(--navy); box-shadow: 0 5px 15px rgba(255,195,0,0.4); }
         .btn-mpesa { background: var(--mpesa); color: white; }
 
-        /* Results & Jobs */
-        .hidden-result { display: none; padding: 15px; background: white; border-radius: 10px; margin-top: 15px; border: 1px solid #3b82f6; }
-        .job-item { padding: 10px; border-bottom: 1px solid #eee; }
+        footer { text-align: center; padding: 60px; background: var(--navy); color: white; }
     </style>
 </head>
 <body>
 
 <header>
-    <p class="logo">ISCOTECH DIGITAL HUB</p>
-    <p>Academy | Global Career AI | Job Placement</p>
-    <small>📍 Homa Bay Town, Opposite Equity Bank</small>
+    <h1 class="logo">IscoTech Digital Hub</h1>
+    <p class="hero-tag">Fast Skills. Big Future. Zero Excuses.</p>
 </header>
 
 <div class="container">
 
-    <div class="section-card">
-        <h2>🏫 IscoTech Academy</h2>
-        <p>Expert training for 2026. Physical (Homa Bay) & Online classes available.</p>
+    <div class="part-section">
+        <h2>🚀 Part 1: Skill Up in Weeks!</h2>
+        <span class="sweet-text">Why waste years when you can master a skill in 21 days?</span>
+        <p>Stop looking for "long courses" that lead nowhere. We teach the high-income skills the world needs <b>RIGHT NOW</b>. Whether you want to work for a company or start your own business, our short-term bootcamps are your secret weapon!</p>
         
-        <div class="course-box">
-            <b>Python Programming & AI</b> <span class="badge">3 Months</span>
-            <br><small>🕒 8:00 AM - 10:00 AM | Logic, Bots, Django</small>
-        </div>
-        <div class="course-box">
-            <b>Web Design & Development</b> <span class="badge">2 Months</span>
-            <br><small>🕒 11:00 AM - 1:00 PM | HTML, CSS, JS, GitHub</small>
-        </div>
-        <div class="course-box">
-            <b>ICT Technical Support</b> <span class="badge">4 Months</span>
-            <br><small>🕒 2:00 PM - 4:00 PM | Hardware & Networking</small>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <span class="time-tag">3 WEEKS</span>
+                <h4>Digital Essentials</h4>
+                <p><small>Internet, Email, Cloud & Online Safety</small></p>
+            </div>
+            <div class="skill-card">
+                <span class="time-tag">1 MONTH</span>
+                <h4>Office Master</h4>
+                <p><small>Advanced Excel, QuickBooks, Data Entry</small></p>
+            </div>
+            <div class="skill-card">
+                <span class="time-tag">2 MONTHS</span>
+                <h4>Web Creator</h4>
+                <p><small>HTML5, CSS3, & Professional Web Design</small></p>
+            </div>
+            <div class="skill-card">
+                <span class="time-tag">3 MONTHS</span>
+                <h4>Python Architect</h4>
+                <p><small>Coding, AI Logic, & Software Development</small></p>
+            </div>
         </div>
 
-        <p>🌟 <b>Success Story:</b> Our graduates are now working in local hospitals and NGOs as ICT assistants!</p>
+        <div class="enroll-box">
+            <h3>🔥 SECURE YOUR SEAT TODAY</h3>
+            <p>Limited slots for Physical (Homa Bay) & Online students!</p>
+            <form action="https://formspree.io/f/xnjzwawl" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="text" name="id_index" placeholder="ID No / KCSE Index" required>
+                <select name="course_duration" style="color:black;">
+                    <option>3-Week Digital Essentials</option>
+                    <option>1-Month Office Power</option>
+                    <option>2-Month Web Mastery</option>
+                    <option>3-Month Python Coding</option>
+                </select>
+                <div style="background:rgba(255,255,255,0.1); padding:15px; border:2px dashed var(--gold); border-radius:15px; margin:15px 0; text-align:center;">
+                    <p style="margin:0; font-weight:bold;">REGISTRATION FEE: 100/-</p>
+                    <b style="font-size:1.5em; color:var(--gold);">M-PESA: 0746939408</b>
+                    <input type="text" name="mpesa" placeholder="Enter M-PESA Confirmation Code" required style="color:black;">
+                </div>
+                <button type="submit" class="btn btn-gold">YES! ENROLL ME NOW</button>
+            </form>
+        </div>
     </div>
 
-    <div class="section-card ai-engine">
-        <h2>🚀 Career AI Placement</h2>
-        <p>Select your exact grade for a national career roadmap (Medicine, Law, Tech, etc.)</p>
+    <div class="part-section ai-promo">
+        <h2>🧠 Part 2: Your Grade Is Not Your Limit!</h2>
+        <div class="worry-box">
+            "Are you worried about your grade? Did you get an E or a D? Does your C feel too small for your dreams? Listen to me: <b>You are greater than a letter on a paper!</b>"
+        </div>
+        <p>Whether you scored an A or an E, our AI Consultant sees your <b>POTENTIAL</b>. We analyze every University and National Polytechnic in Kenya to find the perfect career roadmap for you. From Medicine to Artisan Engineering—there is a path for YOU!</p>
         
-        <input type="text" id="stuName" placeholder="Student Full Name">
-        <select id="exactGrade">
-            <option value="">-- Select Your Mean Grade --</option>
-            <option value="A">A Plain</option><option value="A-">A Minus</option>
-            <option value="B+">B Plus</option><option value="B">B Plain</option><option value="B-">B Minus</option>
-            <option value="C+">C Plus</option><option value="C">C Plain</option><option value="C-">C Minus</option>
-            <option value="D+">D Plus</option><option value="D">D Plain</option><option value="D-">D Minus</option>
-            <option value="E">E Plain</option>
+        <select id="gradeInput">
+            <option value="">-- Choose Your Real Grade (A to E) --</option>
+            <option value="A">Grade A / A- (The Leadership Path)</option>
+            <option value="B">Grade B / B- (The Professional Path)</option>
+            <option value="C">Grade C / C- (The Technical Expert Path)</option>
+            <option value="D">Grade D / D- (The Skills & Artisan Path)</option>
+            <option value="E">Grade E Plain (The Foundation to Greatness)</option>
         </select>
 
-        <div id="aiLock" class="lock-box">
-            <p style="margin:0; font-weight:bold; color:#e67e22;">🔒 UNLOCK NATIONAL ANALYSIS</p>
-            <small>Fee: <b>20/-</b> to <b>0746939408</b> (Director)</small>
-            <input type="text" id="aiCode" placeholder="Enter M-PESA Code">
-            <button class="btn btn-mpesa" onclick="runAI()">Analyze My Career</button>
+        <div style="text-align:center; padding:20px; background:white; border-radius:20px; margin-top:15px;">
+            <p>Unlock Your National Career Roadmap for only <b>20/-</b></p>
+            <input type="text" id="aiCode" placeholder="M-PESA Code" style="border:1px solid #4f46e5; width:250px;">
+            <button class="btn btn-navy" onclick="unlockAI()" style="background:#4f46e5; color:white; width:auto; padding:15px 40px; display:inline-block;">RUN AI ANALYSIS</button>
         </div>
 
-        <div id="aiResult" class="hidden-result">
-            <h4 id="resTitle"></h4>
-            <p id="resPath"></p>
-        </div>
-    </div>
-
-    <div class="section-card">
-        <h2>💼 Job Vacancy Portal</h2>
-        <p>Active 2026 opportunities for Diploma & Certificate holders.</p>
-        
-        <div id="jobLock" class="lock-box">
-            <small>Unlock full list & requirements for <b>20/-</b></small>
-            <input type="text" id="jobCode" placeholder="Enter M-PESA Code">
-            <button class="btn btn-mpesa" onclick="unlockJobs()">Show All Jobs</button>
-        </div>
-
-        <div id="jobContent" class="hidden-result">
-            <div class="job-item">🚀 <b>ICT Support</b> - Homa Bay | 35k</div>
-            <div class="job-item">💻 <b>Cyber Cafe Mgr</b> - Rongo | 18k</div>
-            <div class="job-item">📱 <b>Digital Marketing</b> - Remote | 25k</div>
-            <div class="job-item">🛠️ <b>Hardware Tech</b> - IscoTech Hub</div>
+        <div id="aiResult" style="display:none; margin-top:20px; padding:20px; background:white; border-radius:15px; border-left:10px solid #4f46e5;">
+            <h4 id="aiTitle" style="color:#4f46e5; margin:0;"></h4>
+            <p id="aiMsg" style="font-size:1.1em;"></p>
         </div>
     </div>
 
-    <div class="section-card" style="background: var(--navy); color: white;">
-        <h2 style="color: var(--gold); border-left: 5px solid var(--gold);">📝 Final Registration</h2>
-        <form action="https://formspree.io/f/xnjzwawl" method="POST">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="text" name="details" placeholder="KCSE Index & ID No." required>
-            <select name="study_choice" style="color:black;">
-                <option>Physical Classes (Homa Bay)</option>
-                <option>Online Learning (Virtual)</option>
-            </select>
-            <div class="lock-box" style="background: rgba(255,255,255,0.1); border-color: var(--gold);">
-                <p><b>Admission Fee: 100/-</b></p>
-                <b>M-PESA: 0746939408</b>
-                <input type="text" name="mpesa" placeholder="M-PESA Code" required style="color:black;">
-            </div>
-            <button type="submit" class="btn btn-gold" style="background: var(--gold); color: var(--navy);">Submit Official Enrollment</button>
-        </form>
+    <div class="part-section">
+        <h2>💼 Part 3: Get Working Immediately!</h2>
+        <span class="sweet-text">We don't just train you; we show you where the money is.</span>
+        <p>Why wait years for a job? Our 2026 Job Portal lists active vacancies for students with Computer Skills. From Homa Bay Town offices to Remote Online gigs, your next paycheck is one click away.</p>
+
+        <div style="background:#fff9e6; padding:30px; border-radius:20px; text-align:center; border:1px solid var(--gold);">
+            <p>Access Verified Job List & Contacts for <b>20/-</b></p>
+            <input type="text" id="jobCode" placeholder="M-PESA Code" style="width:250px;">
+            <button class="btn btn-mpesa" onclick="unlockJobs()" style="width:auto; padding:15px 40px; display:inline-block;">UNCOVER OPPORTUNITIES</button>
+        </div>
+        <div id="jobList" style="display:none; margin-top:20px; background:#f9f9f9; padding:15px; border-radius:10px;">
+            <p>✅ <b>ICT Support</b> - Homa Bay | ✅ <b>Data Clerk</b> - Online | ✅ <b>Hardware Tech</b> - Isco Hub</p>
+        </div>
     </div>
 
 </div>
 
 <script>
-function runAI() {
-    let name = document.getElementById('stuName').value;
-    let grade = document.getElementById('exactGrade').value;
+function unlockAI() {
+    let grade = document.getElementById('gradeInput').value;
     let code = document.getElementById('aiCode').value;
-    if(!name || !grade || code.length < 5) { alert("Fill all details & enter M-PESA code"); return; }
-
-    let advice = "";
-    if(grade === "A") advice = "<b>Course:</b> Medicine & Surgery / Software Engineering. <b>Institutions:</b> UoN, JKUAT.";
-    else if(grade === "A-") advice = "<b>Course:</b> Law / Architecture / Pharmacy. <b>Institutions:</b> KU, Strathmore.";
-    else if(grade === "B+") advice = "<b>Course:</b> Civil Engineering / Nursing. <b>Institutions:</b> Egerton, Moi.";
-    else if(grade === "C+") advice = "<b>Course:</b> Journalism / Education Arts. <b>Institutions:</b> Kisii Univ, Maseno.";
-    else if(grade === "C") advice = "<b>Course:</b> Diploma in Clinical Medicine / ICT. <b>Institutions:</b> KMTC, Homa Bay Poly.";
-    else if(grade === "D") advice = "<b>Course:</b> Certificate in Plumbing / Electrical. <b>Institutions:</b> Mawego TTI.";
-    else advice = "<b>Course:</b> Artisan Skills & ICT. <b>Institutions:</b> IscoTech Academy.";
-
-    document.getElementById('resTitle').innerText = "AI Roadmap for " + name;
-    document.getElementById('resPath').innerHTML = advice;
-    document.getElementById('aiLock').style.display = "none";
+    if(!grade || code.length < 5) { alert("Please select your grade and enter M-PESA code!"); return; }
+    
+    document.getElementById('aiTitle').innerText = "ISCOTECH AI ROADMAP GENERATED";
+    document.getElementById('aiMsg').innerHTML = "<b>Listen:</b> Your grade " + grade + " is a stepping stone. You qualify for high-demand courses at <b>National Polytechnics and Colleges (KMTC, Mawego, JKUAT)</b>. Don't be worried—you are built for success! Visit us for your full printed certificate.";
     document.getElementById('aiResult').style.display = "block";
 }
-
 function unlockJobs() {
-    if(document.getElementById('jobCode').value.length < 5) { alert("Enter M-PESA code"); return; }
-    document.getElementById('jobLock').style.display = "none";
-    document.getElementById('jobContent').style.display = "block";
+    if(document.getElementById('jobCode').value.length < 5) { alert("Enter M-PESA code first!"); return; }
+    document.getElementById('jobList').style.display = "block";
 }
 </script>
 
-<footer style="text-align:center; padding:30px; background: white;">
-    <b>Contact IscoTech Official:</b><br>
-    📧 Email: <a href="mailto:Isco53078@gmail.com">Isco53078@gmail.com</a> | 📞 WhatsApp: 0746939408<br>
-    © 2026 IscoTech Academy
+<footer>
+    <h2 style="color:var(--gold);">IscoTech Digital Hub</h2>
+    <p>📍 Homa Bay Town | Opposite Equity Bank</p>
+    <p>📞 0746939408 | 📧 Isco53078@gmail.com</p>
+    <p>© 2026 | The Future Belongs To The Skilled.</p>
 </footer>
 
 </body>
