@@ -3,115 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IscoTech Academy | Global Career AI</title>
+    <title>IscoTech Digital Hub | Academy & Career AI</title>
     <style>
-        :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; }
-        body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; margin: 0; color: #333; }
-        header { background: var(--navy); color: white; padding: 40px 20px; text-align: center; border-bottom: 6px solid var(--gold); }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        .section-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; --white: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; color: #333; line-height: 1.6; }
         
+        /* Navigation & Header */
+        header { background: var(--navy); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        .logo { font-size: 2.2em; font-weight: 900; color: var(--gold); margin: 0; }
+        
+        .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
+        .section-card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 25px; }
+        h2 { color: var(--navy); border-left: 5px solid var(--gold); padding-left: 15px; margin-bottom: 20px; }
+
+        /* Academy Styling */
+        .course-box { background: #f9f9f9; padding: 15px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #eee; }
+        .badge { background: var(--gold); color: var(--navy); padding: 3px 8px; border-radius: 5px; font-size: 0.8em; font-weight: bold; }
+
         /* Career AI Styling */
-        .ai-box { background: #eef2ff; border: 2px solid #4f46e5; padding: 20px; border-radius: 15px; }
-        label { font-weight: bold; display: block; margin-top: 10px; }
-        select, input { width: 100%; padding: 12px; margin-top: 5px; border-radius: 10px; border: 1px solid #ccc; }
+        .ai-engine { background: #eff6ff; border: 2px solid #3b82f6; padding: 20px; border-radius: 15px; }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 10px; box-sizing: border-box; }
         
-        .result-area { display: none; margin-top: 20px; padding: 20px; background: white; border-radius: 10px; border-left: 5px solid #4f46e5; }
-        .btn { display: block; width: 100%; padding: 15px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; margin-top: 15px; text-align: center; text-decoration: none; }
-        .btn-ai { background: #4f46e5; color: white; }
+        /* Payment Gate */
+        .lock-box { background: #fffdf0; border: 2px dashed #e67e22; padding: 20px; border-radius: 15px; text-align: center; margin-top: 15px; }
+        .btn { width: 100%; padding: 15px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 1em; transition: 0.3s; display: block; text-decoration: none; text-align: center; margin-top: 10px; }
+        .btn-navy { background: var(--navy); color: white; }
         .btn-mpesa { background: var(--mpesa); color: white; }
+
+        /* Results & Jobs */
+        .hidden-result { display: none; padding: 15px; background: white; border-radius: 10px; margin-top: 15px; border: 1px solid #3b82f6; }
+        .job-item { padding: 10px; border-bottom: 1px solid #eee; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 style="color:var(--gold); margin:0;">ISCOTECH CAREER AI</h1>
-    <p>National University & College Placement Consultant</p>
+    <p class="logo">ISCOTECH DIGITAL HUB</p>
+    <p>Academy | Global Career AI | Job Placement</p>
+    <small>📍 Homa Bay Town, Opposite Equity Bank</small>
 </header>
 
 <div class="container">
 
-    <div class="section-card ai-box">
-        <h2>🔍 Global Career Analysis</h2>
-        <p>Our AI analyzes your grade and recommends the best courses and institutions across Kenya (JKUAT, UoN, KMTC, Poly, etc.)</p>
+    <div class="section-card">
+        <h2>🏫 IscoTech Academy</h2>
+        <p>Expert training for 2026. Physical (Homa Bay) & Online classes available.</p>
         
-        <label>Enter Full Name</label>
-        <input type="text" id="userName" placeholder="e.g. Leila Val">
+        <div class="course-box">
+            <b>Python Programming & AI</b> <span class="badge">3 Months</span>
+            <br><small>🕒 8:00 AM - 10:00 AM | Logic, Bots, Django</small>
+        </div>
+        <div class="course-box">
+            <b>Web Design & Development</b> <span class="badge">2 Months</span>
+            <br><small>🕒 11:00 AM - 1:00 PM | HTML, CSS, JS, GitHub</small>
+        </div>
+        <div class="course-box">
+            <b>ICT Technical Support</b> <span class="badge">4 Months</span>
+            <br><small>🕒 2:00 PM - 4:00 PM | Hardware & Networking</small>
+        </div>
 
-        <label>Select Your Exact Mean Grade</label>
-        <select id="userGrade">
-            <option value="">-- Choose Grade --</option>
-            <option value="A">A (Plain)</option>
-            <option value="A-">A- (Minus)</option>
-            <option value="B+">B+ (Plus)</option>
-            <option value="B">B (Plain)</option>
-            <option value="B-">B- (Minus)</option>
-            <option value="C+">C+ (Plus)</option>
-            <option value="C">C (Plain)</option>
-            <option value="C-">C- (Minus)</option>
-            <option value="D+">D+ (Plus)</option>
-            <option value="D">D (Plain)</option>
-            <option value="D-">D- (Minus)</option>
-            <option value="E">E (Plain)</option>
+        <p>🌟 <b>Success Story:</b> Our graduates are now working in local hospitals and NGOs as ICT assistants!</p>
+    </div>
+
+    <div class="section-card ai-engine">
+        <h2>🚀 Career AI Placement</h2>
+        <p>Select your exact grade for a national career roadmap (Medicine, Law, Tech, etc.)</p>
+        
+        <input type="text" id="stuName" placeholder="Student Full Name">
+        <select id="exactGrade">
+            <option value="">-- Select Your Mean Grade --</option>
+            <option value="A">A Plain</option><option value="A-">A Minus</option>
+            <option value="B+">B Plus</option><option value="B">B Plain</option><option value="B-">B Minus</option>
+            <option value="C+">C Plus</option><option value="C">C Plain</option><option value="C-">C Minus</option>
+            <option value="D+">D Plus</option><option value="D">D Plain</option><option value="D-">D Minus</option>
+            <option value="E">E Plain</option>
         </select>
 
-        <div id="paymentGate" style="text-align:center; margin-top:20px; border: 2px dashed #4f46e5; padding:15px; border-radius:10px;">
-            <p>💰 <b>Analysis Fee: KES 20</b></p>
-            <small>Pay to Director: <b>0746939408</b></small>
-            <input type="text" id="mpesaCode" placeholder="Enter M-PESA Code">
-            <button class="btn btn-ai" onclick="runAI()">RUN AI ANALYSIS</button>
+        <div id="aiLock" class="lock-box">
+            <p style="margin:0; font-weight:bold; color:#e67e22;">🔒 UNLOCK NATIONAL ANALYSIS</p>
+            <small>Fee: <b>20/-</b> to <b>0746939408</b> (Director)</small>
+            <input type="text" id="aiCode" placeholder="Enter M-PESA Code">
+            <button class="btn btn-mpesa" onclick="runAI()">Analyze My Career</button>
         </div>
 
-        <div id="aiResult" class="result-area">
-            <h3 id="resName" style="margin-top:0;"></h3>
-            <p id="resAdvice"></p>
-            <hr>
-            <p><small>Visit IscoTech Academy opposite Equity Bank for the official printed admission roadmap.</small></p>
-            <a href="https://wa.me/254746939408" class="btn btn-mpesa">Discuss Results with Director</a>
+        <div id="aiResult" class="hidden-result">
+            <h4 id="resTitle"></h4>
+            <p id="resPath"></p>
         </div>
+    </div>
+
+    <div class="section-card">
+        <h2>💼 Job Vacancy Portal</h2>
+        <p>Active 2026 opportunities for Diploma & Certificate holders.</p>
+        
+        <div id="jobLock" class="lock-box">
+            <small>Unlock full list & requirements for <b>20/-</b></small>
+            <input type="text" id="jobCode" placeholder="Enter M-PESA Code">
+            <button class="btn btn-mpesa" onclick="unlockJobs()">Show All Jobs</button>
+        </div>
+
+        <div id="jobContent" class="hidden-result">
+            <div class="job-item">🚀 <b>ICT Support</b> - Homa Bay | 35k</div>
+            <div class="job-item">💻 <b>Cyber Cafe Mgr</b> - Rongo | 18k</div>
+            <div class="job-item">📱 <b>Digital Marketing</b> - Remote | 25k</div>
+            <div class="job-item">🛠️ <b>Hardware Tech</b> - IscoTech Hub</div>
+        </div>
+    </div>
+
+    <div class="section-card" style="background: var(--navy); color: white;">
+        <h2 style="color: var(--gold); border-left: 5px solid var(--gold);">📝 Final Registration</h2>
+        <form action="https://formspree.io/f/xnjzwawl" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="details" placeholder="KCSE Index & ID No." required>
+            <select name="study_choice" style="color:black;">
+                <option>Physical Classes (Homa Bay)</option>
+                <option>Online Learning (Virtual)</option>
+            </select>
+            <div class="lock-box" style="background: rgba(255,255,255,0.1); border-color: var(--gold);">
+                <p><b>Admission Fee: 100/-</b></p>
+                <b>M-PESA: 0746939408</b>
+                <input type="text" name="mpesa" placeholder="M-PESA Code" required style="color:black;">
+            </div>
+            <button type="submit" class="btn btn-gold" style="background: var(--gold); color: var(--navy);">Submit Official Enrollment</button>
+        </form>
     </div>
 
 </div>
 
 <script>
 function runAI() {
-    const name = document.getElementById('userName').value;
-    const grade = document.getElementById('userGrade').value;
-    const code = document.getElementById('mpesaCode').value;
-
-    if(!name || !grade || code.length < 5) {
-        alert("Please enter Name, Grade, and M-PESA Code to unlock.");
-        return;
-    }
+    let name = document.getElementById('stuName').value;
+    let grade = document.getElementById('exactGrade').value;
+    let code = document.getElementById('aiCode').value;
+    if(!name || !grade || code.length < 5) { alert("Fill all details & enter M-PESA code"); return; }
 
     let advice = "";
+    if(grade === "A") advice = "<b>Course:</b> Medicine & Surgery / Software Engineering. <b>Institutions:</b> UoN, JKUAT.";
+    else if(grade === "A-") advice = "<b>Course:</b> Law / Architecture / Pharmacy. <b>Institutions:</b> KU, Strathmore.";
+    else if(grade === "B+") advice = "<b>Course:</b> Civil Engineering / Nursing. <b>Institutions:</b> Egerton, Moi.";
+    else if(grade === "C+") advice = "<b>Course:</b> Journalism / Education Arts. <b>Institutions:</b> Kisii Univ, Maseno.";
+    else if(grade === "C") advice = "<b>Course:</b> Diploma in Clinical Medicine / ICT. <b>Institutions:</b> KMTC, Homa Bay Poly.";
+    else if(grade === "D") advice = "<b>Course:</b> Certificate in Plumbing / Electrical. <b>Institutions:</b> Mawego TTI.";
+    else advice = "<b>Course:</b> Artisan Skills & ICT. <b>Institutions:</b> IscoTech Academy.";
 
-    // AI LOGIC FOR ALL KENYAN SCHOOLS
-    switch(grade) {
-        case "A": advice = "<b>Top Careers:</b> Medicine, Surgery, or Software Engineering.<br><b>Recommended Schools:</b> University of Nairobi (UoN) or JKUAT."; break;
-        case "A-": advice = "<b>Top Careers:</b> Pharmacy, Law, or Architecture.<br><b>Recommended Schools:</b> Kenyatta University (KU) or Strathmore."; break;
-        case "B+": advice = "<b>Top Careers:</b> Nursing, Civil Engineering, or Finance.<br><b>Recommended Schools:</b> Egerton or Moi University."; break;
-        case "B": advice = "<b>Top Careers:</b> Education (Science), Economics, or Dental Surgery.<br><b>Recommended Schools:</b> Maseno University or Masinde Muliro."; break;
-        case "B-": advice = "<b>Top Careers:</b> Hospitality Mgmt, Agriculture, or Medical Lab.<br><b>Recommended Schools:</b> Chuka University or KMTC."; break;
-        case "C+": advice = "<b>Top Careers:</b> Journalism, Education (Arts), or Community Development.<br><b>Recommended Schools:</b> Kisii University or Pwani University."; break;
-        case "C": advice = "<b>Top Careers:</b> Diploma in Clinical Medicine, ICT, or Accounting.<br><b>Recommended Schools:</b> KMTC or Homa Bay Kenya Medical Training College."; break;
-        case "C-": advice = "<b>Top Careers:</b> Diploma in Nutrition, Fashion Design, or Automotive Engineering.<br><b>Recommended Schools:</b> Sigalagala National Polytechnic or Kisumu Poly."; break;
-        case "D+": advice = "<b>Top Careers:</b> Certificate in Plumbing, Building Tech, or Catering.<br><b>Recommended Schools:</b> Homa Bay Town Youth Polytechnic or Mawego TTI."; break;
-        case "D": advice = "<b>Top Careers:</b> Certificate in Electrical Installation or Hairdressing.<br><b>Recommended Schools:</b> Any Accredited Vocational Training Center (VTC)."; break;
-        case "D-": advice = "<b>Top Careers:</b> Artisan in Masonry, Welding, or Carpentry.<br><b>Recommended Schools:</b> Local Community Polytechnics."; break;
-        case "E": advice = "<b>Top Careers:</b> Artisan Skills & Entrepreneurship.<br><b>Recommended Schools:</b> IscoTech Basic Packages or Government Artisan Programs."; break;
-        default: advice = "Please contact the director for a manual review.";
-    }
-
-    document.getElementById('resName').innerText = "AI Report for " + name;
-    document.getElementById('resAdvice').innerHTML = advice;
-    document.getElementById('paymentGate').style.display = "none";
+    document.getElementById('resTitle').innerText = "AI Roadmap for " + name;
+    document.getElementById('resPath').innerHTML = advice;
+    document.getElementById('aiLock').style.display = "none";
     document.getElementById('aiResult').style.display = "block";
+}
+
+function unlockJobs() {
+    if(document.getElementById('jobCode').value.length < 5) { alert("Enter M-PESA code"); return; }
+    document.getElementById('jobLock').style.display = "none";
+    document.getElementById('jobContent').style.display = "block";
 }
 </script>
 
-<footer style="text-align:center; padding:20px; color:#666;">
-    Official Support: <b>Isco53078@gmail.com</b> | 📞 <b>0746939408</b>
+<footer style="text-align:center; padding:30px; background: white;">
+    <b>Contact IscoTech Official:</b><br>
+    📧 Email: <a href="mailto:Isco53078@gmail.com">Isco53078@gmail.com</a> | 📞 WhatsApp: 0746939408<br>
+    © 2026 IscoTech Academy
 </footer>
 
 </body>
