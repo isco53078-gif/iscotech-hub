@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IscoTech Hub | Official 3-Department Portal</title>
+    <title>IscoTech Hub | Official 3-Dept Portal</title>
     <style>
         :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; --light: #f4f7f6; }
         body { font-family: 'Poppins', sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.6; }
@@ -18,7 +18,7 @@
         table { width: 100%; border-collapse: collapse; font-size: 0.9em; margin-top: 10px; }
         th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
         th { background: var(--navy); color: white; }
-        .pay-step { background: #fff3cd; padding: 15px; border-radius: 10px; border: 1px solid #ffeeba; text-align: center; margin-bottom: 15px; }
+        .pay-step { background: #fff3cd; padding: 15px; border-radius: 10px; border: 2px dashed #fbc02d; text-align: center; margin-bottom: 15px; }
         #ai-result-box { display: none; margin-top: 20px; padding: 20px; background: #d4edda; border-radius: 10px; border-left: 5px solid var(--mpesa); }
     </style>
 </head>
@@ -43,16 +43,18 @@
                 <tr><td>Web Engineering</td><td>2 Months</td><td>2,200/-</td></tr>
                 <tr><td>ICT Masterclass</td><td>1 Month</td><td>2,800/-</td></tr>
                 <tr><td>Graphic Design</td><td>6 Weeks</td><td>1,400/-</td></tr>
-                <tr><td>Smartphone Tech</td><td>2 Weeks</td><td>500/-</td></tr>
                 <tr><td>AI Speed Lessons</td><td>1 Week</td><td>400/-</td></tr>
             </table>
         </div>
         <div class="form-area">
-            <h4>Enrollment Form</h4>
+            <h4>Enrollment & Payment</h4>
+            <div class="pay-step">
+                <strong>Reg Fee: KES 50</strong><br>
+                Paybill: <b>714888</b> | Acc: <b>448941</b>
+            </div>
             <input type="text" placeholder="Full Name">
             <input type="text" placeholder="WhatsApp Number">
-            <p style="font-size: 0.8em;">Pay <b>50/-</b> Reg Fee to <b>0746939408</b></p>
-            <button class="btn" onclick="location.href='https://wa.me/254746939408'">Submit & Pay 50/-</button>
+            <button class="btn" onclick="location.href='https://wa.me/254746939408?text=I_have_paid_50_for_Academy'">Submit & Pay</button>
         </div>
     </div>
 
@@ -61,13 +63,17 @@
         <div class="content-area">
             <h3>Government Services</h3>
             <p>Fast KRA PIN generation, recovery, and KUCCPS/HEF placement services.</p>
-            <p><b>Required:</b> ID Number, Active Email, P.O. Box Address.</p>
+            <p><b>Pay the unlock fee to start your application process immediately.</b></p>
         </div>
         <div class="form-area">
-            <h4>Service Request</h4>
+            <h4>Unlock Service</h4>
+            <div class="pay-step">
+                <strong>Unlock Fee: KES 20</strong><br>
+                Paybill: <b>714888</b> | Acc: <b>448941</b>
+            </div>
             <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="ID Number">
-            <button class="btn" onclick="location.href='https://wa.me/254746939408?text=KRA_Help'">Start Validation (20/-)</button>
+            <input type="text" id="kraMpesa" placeholder="M-Pesa Code">
+            <button class="btn" onclick="location.href='https://wa.me/254746939408?text=I_paid_20_to_unlock_KRA'">Pay to Unlock</button>
         </div>
     </div>
 
@@ -76,16 +82,18 @@
         <div class="content-area">
             <h3>Deep Molecule Analysis</h3>
             <div class="pay-step">
-                <strong>Step 1: Pay Analysis Fee</strong>
-                <p>M-PESA: <b>0746939408</b> | Amount: <b>KES 50</b></p>
+                <strong>Analysis Fee: KES 50</strong><br>
+                Paybill: <b>714888</b> | Acc: <b>448941</b>
             </div>
-            <label>Exact Mean Grade:</label>
+            
+            <label>Select Mean Grade:</label>
             <select id="meanGrade">
                 <option value="">-- Choose Grade --</option>
                 <option value="A/B">A or B</option>
                 <option value="C+">C+</option><option value="C">C (Plain)</option><option value="C-">C-</option>
                 <option value="D">D</option><option value="E">E</option>
             </select>
+
             <label>Subject Strength:</label>
             <select id="subjectMolecule">
                 <option value="">-- Choose Strength --</option>
@@ -93,19 +101,22 @@
                 <option value="Math">Math/Physics</option>
                 <option value="Arts">English/Business</option>
             </select>
-            <input type="text" id="txnCode" placeholder="M-Pesa Transaction Code">
+
+            <input type="text" id="txnCode" placeholder="Enter Transaction Code">
             <button class="btn" style="background:var(--navy); margin-top:10px;" onclick="runAnalysis()">UNLOCK 6-7 RECOMMENDATIONS</button>
 
             <div id="ai-result-box">
                 <h3 style="margin-top:0;">Top Career Recommendations:</h3>
                 <ul id="analysisOutput" style="line-height:1.8;"></ul>
+                <hr>
+                <p style="font-size:0.85em;"><i>Official IscoTech Career Roadmap. Save these results below.</i></p>
             </div>
         </div>
         <div class="form-area">
-            <h4>Record Details</h4>
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="WhatsApp">
-            <button class="btn">Save Results</button>
+            <h4>Save Results to WhatsApp</h4>
+            <input type="text" id="saveName" placeholder="Full Name">
+            <input type="text" id="savePhone" placeholder="WhatsApp Number">
+            <button class="btn" onclick="saveToWhatsApp()">Send to My WhatsApp</button>
         </div>
     </div>
 
@@ -120,21 +131,28 @@ function runAnalysis() {
 
     let courses = [];
     if (grade === "C") {
-        if (molecule === "Biology") courses = ["Dip. Clinical Medicine", "Dip. Nursing", "Dip. Pharmacy", "Dip. Medical Imaging", "Dip. Physiotherapy", "Dip. Dental Tech"];
-        else if (molecule === "Math") courses = ["Dip. Civil Engineering", "Dip. Electrical Engineering", "Dip. ICT", "Dip. Architecture", "Dip. Software Engineering", "Dip. Quantity Surveying"];
-        else courses = ["Dip. Business Admin", "Dip. Journalism", "Dip. Hospitality", "Dip. Accounting", "Dip. Social Work", "Dip. Procurement"];
+        courses = ["Dip. Clinical Medicine", "Dip. Nursing", "Dip. Pharmacy", "Dip. Medical Imaging", "Dip. Physiotherapy", "Dip. Dental Tech"];
     } else if (grade === "C-") {
         courses = ["Dip. Health Records", "Dip. Community Health", "Dip. Nutrition", "Dip. Building Tech", "Dip. Automotive Engineering", "Cert. in ICT & Coding"];
+    } else if (grade === "C+") {
+        courses = ["B.Sc. Nursing", "B.Sc. IT", "Dip. Clinical Medicine", "B.Sc. Public Health", "Dip. Pharmacy", "B.Sc. Computer Science"];
     } else if (grade === "A/B") {
         courses = ["Medicine & Surgery", "Aeronautical Engineering", "Law (LLB)", "Pharmacy (Degree)", "Data Science", "Architecture"];
     } else {
-        courses = ["Cert. in Plumbing", "Cert. in Automotive", "Cert. in Electrical", "Cert. in Masonry", "Cert. in Hairdressing", "Cert. in Food & Bev"];
+        courses = ["Cert. in Plumbing", "Cert. in Automotive", "Cert. in Electrical", "Cert. in Masonry", "Cert. in Hairdressing", "Cert. in ICT Basics"];
     }
 
     const output = document.getElementById('analysisOutput');
     output.innerHTML = "";
     courses.forEach(c => { output.innerHTML += "<li><b>" + c + "</b></li>"; });
     document.getElementById('ai-result-box').style.display = "block";
+}
+
+function saveToWhatsApp() {
+    const name = document.getElementById('saveName').value;
+    const phone = document.getElementById('savePhone').value;
+    if(!name || !phone) { alert("Enter details to save!"); return; }
+    window.location.href = `https://wa.me/254746939408?text=Hello_I_am_${name}_I_want_to_save_my_results`;
 }
 </script>
 </body>
