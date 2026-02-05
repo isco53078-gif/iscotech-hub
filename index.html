@@ -3,147 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IscoTech Academy & Consultancy | 2026</title>
+    <title>IscoTech Hub | Digital Academy & Consultancy</title>
     <style>
-        :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; --light: #f8fafc; }
-        body { font-family: 'Poppins', sans-serif; background: var(--light); margin: 0; color: #333; scroll-behavior: smooth; }
+        :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; --light: #f4f7f6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); margin: 0; color: #333; }
+        header { background: var(--navy); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        .tagline { color: var(--gold); font-weight: bold; font-size: 1.2em; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
         
-        /* Header & Navigation */
-        header { background: linear-gradient(rgba(0,8,20,0.9), rgba(0,8,20,0.9)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000'); background-size: cover; color: white; padding: 80px 20px; text-align: center; border-bottom: 8px solid var(--gold); }
-        .logo { font-size: 3.5em; font-weight: 900; color: var(--gold); margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-        .slogan { font-style: italic; font-size: 1.2em; opacity: 0.9; }
-
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .section-title { text-align: center; margin-top: 40px; color: var(--navy); text-transform: uppercase; letter-spacing: 2px; }
         
-        /* Individual Department Sections */
-        .dept-section { background: white; padding: 40px; border-radius: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); margin-bottom: 60px; border-top: 12px solid var(--navy); }
-        .dept-title { font-size: 2.2em; color: var(--navy); border-bottom: 3px solid var(--gold); display: inline-block; margin-bottom: 20px; }
-        .sweet-intro { font-size: 1.1em; color: #555; margin-bottom: 25px; line-height: 1.8; }
+        /* Grid Layout for Courses */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 5px solid var(--gold); }
+        .card h3 { margin-top: 0; color: var(--navy); }
+        .price-tag { display: flex; justify-content: space-between; margin-top: 10px; font-weight: bold; }
+        .online-price { color: var(--mpesa); }
 
-        /* Tables */
-        .fee-table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 15px; overflow: hidden; }
-        .fee-table th { background: var(--navy); color: var(--gold); padding: 18px; text-align: left; }
-        .fee-table td { padding: 18px; border-bottom: 1px solid #eee; font-weight: 500; }
-        .online-highlight { color: var(--mpesa); font-weight: 700; }
-
-        /* Gate/Payment Styling */
-        .payment-gate { background: #001d3d; color: white; padding: 35px; border-radius: 30px; text-align: center; margin-top: 25px; }
-        .payment-gate h4 { color: var(--gold); font-size: 1.5em; margin-top: 0; }
-        input, select { width: 100%; padding: 18px; margin: 10px 0; border-radius: 15px; border: none; font-size: 1em; box-sizing: border-box; }
+        /* Payment Box */
+        .pay-gate { background: #fff8e1; border: 2px dashed var(--gold); padding: 20px; border-radius: 15px; text-align: center; margin: 30px 0; }
+        .btn { display: inline-block; padding: 15px 30px; background: var(--mpesa); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 10px; }
         
-        .btn { width: 100%; padding: 22px; border: none; border-radius: 60px; font-weight: 900; cursor: pointer; font-size: 1.2em; text-transform: uppercase; transition: 0.3s; display: block; text-align: center; text-decoration: none; margin-top: 15px; }
-        .btn-gold { background: var(--gold); color: var(--navy); box-shadow: 0 5px 15px rgba(255, 195, 0, 0.4); }
-        .btn-whatsapp { background: var(--mpesa); color: white; display: none; }
+        /* Table for Career Molecules */
+        table { width: 100%; border-collapse: collapse; background: white; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: var(--navy); color: white; }
 
-        footer { text-align: center; padding: 60px; background: var(--navy); color: white; }
+        .shift-badge { background: var(--navy); color: var(--gold); padding: 5px 10px; border-radius: 5px; font-size: 0.8em; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 class="logo">IscoTech Hub</h1>
-    <p class="slogan">"Your Bridge to the Digital Future and Academic Success"</p>
+    <h1>ISCOTECH HUB</h1>
+    <p class="tagline">"Innovation, Career Guidance & Government Excellence"</p>
+    <p>Location: Homa Bay | Online: Worldwide</p>
 </header>
 
 <div class="container">
 
-    <div class="dept-section" id="academy">
-        <h2 class="dept-title">🏫 IscoTech ICT Academy</h2>
-        <p class="sweet-intro">
-            Welcome to the home of "Time-Call Coding!" Whether you are starting from zero or want to become a professional, we have a desk for you. Our classes are designed to be simple, practical, and life-changing. 
-            <br>📍 <b>Physical:</b> Homa Bay Town (Opposite Equity Bank) | 🌙 <b>Online:</b> Night & Day (WhatsApp/Zoom)
-        </p>
+    <h2 class="section-title">1. IscoTech Academy (Day & Night)</h2>
+    <p style="text-align:center;">We offer a variety of courses with flexible timing. <b>Online classes are cheaper!</b></p>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <span class="shift-badge">☀️ DAY: 8:00 AM - 5:00 PM (Physical & Online)</span>
+        <span class="shift-badge">🌙 NIGHT: 7:00 PM - 9:30 PM (Online Only)</span>
+    </div>
 
-        <table class="fee-table">
-            <thead>
-                <tr><th>Course Name</th><th>Duration</th><th>Physical Fee</th><th>Online Fee</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Time-Call Coding (Python)</td><td>3 Months</td><td>6,000/-</td><td class="online-highlight">3,500/-</td></tr>
-                <tr><td>Web Engineering</td><td>2 Months</td><td>5,000/-</td><td class="online-highlight">3,000/-</td></tr>
-                <tr><td>ICT Masterclass</td><td>1 Month</td><td>4,000/-</td><td class="online-highlight">2,200/-</td></tr>
-            </tbody>
-        </table>
-        <p style="color: var(--mpesa); font-weight: bold;">📜 INSTANT CERTIFICATE ISSUED UPON COMPLETION!</p>
+    <div class="grid">
+        <div class="card">
+            <h3>Full-Stack Development</h3>
+            <p>4 Months Mastery</p>
+            <div class="price-tag"><span>Physical: 5,000/-</span> <span class="online-price">Online: 4,200/-</span></div>
+        </div>
+        <div class="card">
+            <h3>Time-Call Coding (Python)</h3>
+            <p>3 Months Intensive</p>
+            <div class="price-tag"><span>Physical: 3,500/-</span> <span class="online-price">Online: 2,500/-</span></div>
+        </div>
+        <div class="card">
+            <h3>ICT Masterclass</h3>
+            <p>1 Month Professional</p>
+            <div class="price-tag"><span>Physical: 4,000/-</span> <span class="online-price">Online: 2,800/-</span></div>
+        </div>
+        <div class="card">
+            <h3>Web Engineering</h3>
+            <p>2 Months Design</p>
+            <div class="price-tag"><span>Physical: 3,000/-</span> <span class="online-price">Online: 2,200/-</span></div>
+        </div>
+        </div>
 
-        <div class="payment-gate">
-            <h4>Ready to Start? Register Now</h4>
-            <p>Pay <b>100/-</b> Registration to <b>0746939408</b> to unlock your timetable.</p>
-            <input type="text" id="regCode" placeholder="Enter M-PESA Code">
-            <button class="btn btn-gold" onclick="unlock('academy')">SECURE MY SPOT</button>
-            <div id="academyLink" style="display:none;">
-                <a href="https://wa.me/254746939408" class="btn btn-whatsapp" style="display:block;">CHAT WITH DIRECTOR ON WHATSAPP</a>
-            </div>
+    <div class="pay-gate">
+        <h3>Join the Academy</h3>
+        <p>To ensure everything runs <b>smoothly</b>, pay the Registration Fee: <b>KES 50</b></p>
+        <p>M-PESA: <b>0746939408</b> (Director)</p>
+        <a href="https://wa.me/254746939408?text=I%20want%20to%20enroll%20in%20a%20specific%20course" class="btn">ENROLL NOW</a>
+    </div>
+
+    <h2 class="section-title">2. Career AI & Exam Checkup</h2>
+    <div class="card">
+        <p>"Are you worried about your grade? Let's analyze your academic molecules."</p>
+        <p>We analyze your specific grades in Math, Biology, Chemistry, English, etc., to find your fit in <b>Medical Sciences, Engineering, or Arts.</b></p>
+        <div class="pay-gate" style="background: #e3f2fd; border-color: #2196f3;">
+            <h3>Get Your Results Analysis</h3>
+            <p>To trigger the AI system and receive your roadmap: <b>KES 20</b></p>
+            <p>Pay to: <b>0746939408</b></p>
+            <a href="https://wa.me/254746939408?text=I%20want%20my%20career%20result%20analysis" class="btn" style="background:#2196f3;">START ANALYSIS</a>
         </div>
     </div>
 
-    <div class="dept-section" id="career-ai">
-        <h2 class="dept-title">🧠 Career AI & Performance Hub</h2>
-        <p class="sweet-intro">
-            Don't let your grade define your destiny! Our AI Analytics system looks at your performance (Grade A to E) and matches you with the perfect career path. We provide a deep "Exam Checkup" to see where you shine the most.
-        </p>
+    <h2 class="section-title">3. KUCCPS, HEF & School Transfers</h2>
+    <div class="card">
+        <p>Professional guidance for University/College placement and Government Funding (HELB).</p>
+        <ul>
+            <li>KUCCPS Course Selection</li>
+            <li>HEF/HELB Loan Applications</li>
+            <li>College Transfers & KMTC Applications</li>
+        </ul>
+        <div class="pay-gate">
+            <p>Consultation Fee to start working: <b>KES 50</b></p>
+            <p>Pay to: <b>0746939408</b></p>
+        </div>
+    </div>
+
+    <h2 class="section-title">4. KRA PIN (Caribbean) & Documentation</h2>
+    <div class="card">
+        <p>Every student needs a KRA PIN for groups and funding. We offer this at a <b>cheaper price!</b></p>
+        <p><b>Required Details:</b> ID/Birth Certificate, Active Email, Phone Number, Current Residence, and P.O. Box Address.</p>
         
-        <div class="payment-gate" style="background: #003566;">
-            <h4>Unlock Your Professional Roadmap</h4>
-            <p>A small fee of <b>20/-</b> gives you a stamped AI Career Report.</p>
-            <select id="grade">
-                <option value="">-- Select Your Mean Grade --</option>
-                <option>Grade A/B</option><option>Grade C</option><option>Grade D</option><option>Grade E</option>
-            </select>
-            <input type="text" id="aiCode" placeholder="Enter 20/- M-PESA Code">
-            <button class="btn btn-gold" onclick="unlock('ai')">GET MY AI ANALYSIS</button>
-            <div id="aiLink" style="display:none;">
-                <p>✅ Analysis Ready! Click below to receive your stamped PDF roadmap.</p>
-                <a href="https://wa.me/254746939408" class="btn btn-whatsapp" style="display:block;">GET MY REPORT ON WHATSAPP</a>
-            </div>
+        <div style="background: #f1f1f1; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
+            <p><b>Step 1:</b> Pay <b>KES 20</b> to validate your details with the Director.</p>
+            <p><b>Step 2:</b> Provide your ID/Email/Address for verification.</p>
+            <p><b>Step 3:</b> Pay <b>KES 250</b> for final PIN generation & certificate delivery.</p>
         </div>
-    </div>
-
-    <div class="dept-section" id="placements">
-        <h2 class="dept-title">🎓 KUCCPS, HEF & Government Services</h2>
-        <p class="sweet-intro">
-            The path to University and College can be confusing. We make it easy! From <b>KUCCPS Placement</b> and <b>HEF/HELB Loan</b> applications to creating your <b>KRA PIN</b>, we handle the stress while you focus on your dreams.
-        </p>
-
-        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
-            <div style="background:#f0f7ff; padding:15px; border-radius:15px; border:1px solid #bee3f8;">✅ KUCCPS University Selection</div>
-            <div style="background:#f0f7ff; padding:15px; border-radius:15px; border:1px solid #bee3f8;">✅ HEF/HELB Funding Help</div>
-            <div style="background:#f0f7ff; padding:15px; border-radius:15px; border:1px solid #bee3f8;">✅ KRA PIN Registration</div>
-            <div style="background:#f0f7ff; padding:15px; border-radius:15px; border:1px solid #bee3f8;">✅ School/College Transfers</div>
-        </div>
-
-        <div class="payment-gate" style="background: #1a1a1a;">
-            <h4>Start Your Application Today</h4>
-            <p>Pay <b>100/-</b> Consultation to <b>0746939408</b> for direct expert help.</p>
-            <input type="text" id="placeCode" placeholder="Enter M-PESA Code">
-            <button class="btn btn-gold" onclick="unlock('place')">TALK TO PLACEMENT EXPERT</button>
-            <div id="placeLink" style="display:none;">
-                <a href="https://wa.me/254746939408" class="btn btn-whatsapp" style="display:block;">CHAT WITH EXPERT ON WHATSAPP</a>
-            </div>
+        
+        <div class="pay-gate" style="background: #e8f5e9; border-color: var(--mpesa);">
+            <p>Start KRA Validation: <b>KES 20</b></p>
+            <p>M-PESA: <b>0746939408</b></p>
+            <a href="https://wa.me/254746939408?text=I%20need%20to%20create%20my%20KRA%20PIN" class="btn">GENERATE KRA PIN</a>
         </div>
     </div>
 
 </div>
 
-<script>
-function unlock(dept) {
-    if(dept === 'academy' && document.getElementById('regCode').value.length >= 5) {
-        document.getElementById('academyLink').style.display = 'block';
-    } else if(dept === 'ai' && document.getElementById('aiCode').value.length >= 5) {
-        document.getElementById('aiLink').style.display = 'block';
-    } else if(dept === 'place' && document.getElementById('placeCode').value.length >= 5) {
-        document.getElementById('placeLink').style.display = 'block';
-    } else {
-        alert("Please enter a valid M-PESA confirmation code to proceed.");
-    }
-}
-</script>
-
-<footer>
-    <h2>IscoTech Hub</h2>
-    <p>📍 Homa Bay Town | Opposite Equity Bank</p>
-    <p>📞 0746939408 | 📧 Isco53078@gmail.com</p>
-    <p>© 2026 | "Innovate • Code • Conquer"</p>
+<footer style="background: var(--navy); color: white; text-align: center; padding: 20px; margin-top: 50px;">
+    <p>&copy; 2026 IscoTech Hub. All Rights Reserved.</p>
+    <p>Powered by IscoTech AI Systems</p>
 </footer>
 
 </body>
