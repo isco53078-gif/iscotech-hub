@@ -1,91 +1,148 @@
-<h2 class="dept-title">3. Automated Career AI & Course Analysis</h2>
-<div class="card">
-    <div class="content-area">
-        <h3>"Worried about your Grade? Let's Analyze your Future."</h3>
-        <p>Whether you got an <b>A</b> or an <b>E</b>, our AI analyzes the "molecules" of your subjects to find the best course for you among thousands of global career paths.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IscoTech Hub | Digital Solutions Portal</title>
+    <style>
+        :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; --light: #f4f7f6; }
+        body { font-family: 'Poppins', sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.6; }
+        header { background: var(--navy); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .dept-title { color: var(--navy); border-left: 10px solid var(--gold); padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-weight: 900; }
+        .card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-top: 20px; display: flex; flex-wrap: wrap; gap: 20px; }
+        .content-area { flex: 1; min-width: 300px; }
+        .form-area { flex: 0.8; min-width: 300px; background: #f9f9f9; padding: 20px; border-radius: 15px; border: 1px solid #ddd; }
+        input, select { width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        .btn { display: inline-block; width: 100%; padding: 12px; background: var(--mpesa); color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; border: none; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9em; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: var(--navy); color: white; }
         
-        <div class="pay-step" style="background: #fff3cd; padding: 15px; border-radius: 10px; border: 1px solid #ffeeba; text-align: center;">
-            <strong>Step 1: Pay Analysis Fee</strong>
-            <p>M-PESA: <b>0746939408</b> (Director) | Amount: <b>KES 20</b></p>
+        /* Automation Styles */
+        #ai-result-box { display: none; margin-top: 20px; padding: 20px; background: #d4edda; border-radius: 10px; border-left: 5px solid var(--mpesa); animation: fadeIn 0.5s; }
+        .pay-step { background: #fff3cd; padding: 15px; border-radius: 10px; border: 1px solid #ffeeba; margin-bottom: 15px; text-align: center; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ISCOTECH HUB</h1>
+    <p style="color:var(--gold);">Innovation | Career AI | Government Placements</p>
+    <p>Homa Bay & Online | ☀️ Day & 🌙 Night Shifts</p>
+</header>
+
+<div class="container">
+
+    <h2 class="dept-title">1. IscoTech Academy</h2>
+    <div class="card">
+        <div class="content-area">
+            <h3>Course Fee Structure</h3>
+            <table>
+                <tr><th>Course</th><th>Duration</th><th>Online Fee</th></tr>
+                <tr><td>Full-Stack Dev</td><td>4 Months</td><td>4,200/-</td></tr>
+                <tr><td>Python Coding</td><td>3 Months</td><td>2,500/-</td></tr>
+                <tr><td>Web Engineering</td><td>2 Months</td><td>2,200/-</td></tr>
+                <tr><td>ICT Masterclass</td><td>1 Month</td><td>2,800/-</td></tr>
+                <tr><td>AI Speed Lessons</td><td>1 Week</td><td>400/-</td></tr>
+            </table>
+            <p><i>*6 more courses available. Registration: 50/-*</i></p>
         </div>
-
-        <label>Select Your Mean Grade:</label>
-        <select id="meanGrade">
-            <option value="">-- Choose Grade --</option>
-            <option value="A">A (Plain/Minus)</option>
-            <option value="B">B (Plus/Plain/Minus)</option>
-            <option value="C">C (Plus/Plain/Minus)</option>
-            <option value="D">D (Plus/Plain/Minus)</option>
-            <option value="E">E (Artisan Level)</option>
-        </select>
-        
-        <label>Your Strongest Subject Molecule:</label>
-        <select id="subjectMolecule">
-            <option value="">-- Choose Strength --</option>
-            <option value="Biology">Biology/Chemistry (Medical)</option>
-            <option value="Math">Math/Physics (Engineering/Tech)</option>
-            <option value="English">English/Kiswahili (Law/Media)</option>
-            <option value="Business">Business/Geography (Finance/Admin)</option>
-            <option value="Creative">Art/Music/Design (Creative Arts)</option>
-        </select>
-
-        <label>M-PESA Transaction Code:</label>
-        <input type="text" id="txnCode" placeholder="Enter Code (e.g. TCR4...)">
-
-        <button class="btn" style="background:var(--navy); margin-top:10px;" onclick="generateDeepAnalysis()">UNLOCK DEEP ANALYSIS</button>
-
-        <div id="ai-result-box" style="display:none; margin-top:20px; padding:20px; background: #d4edda; border-radius: 10px; border-left: 5px solid var(--mpesa);">
-            <h3 style="margin-top:0; color:#155724;">AI Analysis Complete ✅</h3>
-            <div id="analysisOutput"></div>
-            <hr>
-            <p style="font-size:0.85em;"><i>Official IscoTech Career Roadmap. Present this to the Director for College Placement.</i></p>
+        <div class="form-area">
+            <h4>Enrollment Form</h4>
+            <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="WhatsApp Number">
+            <input type="email" placeholder="Active Email">
+            <button class="btn" onclick="location.href='https://wa.me/254746939408?text=I%20want%20to%20enroll'">Submit & Pay 50/-</button>
         </div>
     </div>
 
-    <div class="form-area">
-        <h4>Save Your Report</h4>
-        <input type="text" id="uName" placeholder="Full Name">
-        <input type="text" id="uWhatsApp" placeholder="WhatsApp Number">
-        <input type="email" id="uEmail" placeholder="Active Email">
-        <button class="btn" onclick="alert('Details saved! Please run the analysis to generate your report.')">Submit for Record</button>
+    <h2 class="dept-title">2. KRA (Caribbean) & Placements</h2>
+    <div class="card">
+        <div class="content-area">
+            <h3>KUCCPS, HEF & KRA</h3>
+            <p>Fast generation for KRA PINs and College Placements. Cheaper and error-free.</p>
+            <p><b>Required:</b> ID Number, Active Email, P.O. Box Address.</p>
+        </div>
+        <div class="form-area">
+            <h4>Request Service</h4>
+            <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="ID Number">
+            <input type="text" placeholder="P.O. Box & Town">
+            <button class="btn" onclick="location.href='https://wa.me/254746939408?text=KRA_Placement_Help'">Process Service (20/-)</button>
+        </div>
     </div>
+
+    <h2 class="dept-title">3. Automated Career AI Analysis</h2>
+    <div class="card">
+        <div class="content-area">
+            <h3>"Get Your Roadmap Instantly"</h3>
+            
+            <div class="pay-step">
+                <strong>Step 1: Pay Analysis Fee</strong>
+                <p>M-PESA: <b>0746939408</b> (Director)<br>Amount: <b>KES 20</b></p>
+            </div>
+
+            <label>Select Mean Grade:</label>
+            <select id="grade"><option value="">-- Choose Grade --</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select>
+            
+            <label>Your Strongest Subject Molecule:</label>
+            <select id="sub"><option value="">-- Choose Subject --</option><option value="Med">Biology/Chemistry</option><option value="Tech">Math/Physics</option><option value="Arts">English/Arts</option></select>
+            
+            <label>M-PESA Transaction Code:</label>
+            <input type="text" id="mpesaCode" placeholder="Enter M-Pesa Code (e.g. TCR4...)">
+
+            <button class="btn" style="background:var(--navy); margin-top:10px;" onclick="unlockResult()">UNLOCK MY RESULTS</button>
+
+            <div id="ai-result-box">
+                <h3 style="margin-top:0;">Analysis Results Unlocked!</h3>
+                <p id="path-text"></p>
+                <p style="font-size:0.85em; border-top:1px solid #ccc; padding-top:10px;">
+                    <b>Official Recommendation:</b> Visit IscoTech Hub in Homa Bay or join our Night Shift Online classes to start this career.
+                </p>
+            </div>
+        </div>
+        <div class="form-area">
+            <h4>Submit for Full Roadmap</h4>
+            <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="WhatsApp Number">
+            <input type="email" placeholder="Active Email">
+            <button class="btn">Send Full PDF Report</button>
+        </div>
+    </div>
+
 </div>
 
+<footer style="background: var(--navy); color: white; text-align: center; padding: 20px; margin-top: 40px;">
+    <p>&copy; 2026 IscoTech Hub | Homa Bay & Online</p>
+</footer>
+
 <script>
-function generateDeepAnalysis() {
-    const grade = document.getElementById('meanGrade').value;
-    const molecule = document.getElementById('subjectMolecule').value;
-    const txn = document.getElementById('txnCode').value;
+    function unlockResult() {
+        const grade = document.getElementById('grade').value;
+        const sub = document.getElementById('sub').value;
+        const code = document.getElementById('mpesaCode').value;
 
-    if (!grade || !molecule || !txn) {
-        alert("Please enter all details and the M-Pesa code to unlock your deep analysis.");
-        return;
+        if(!grade || !sub || !code) {
+            alert("Please select your grade, subject, and enter your M-Pesa code to unlock results.");
+            return;
+        }
+
+        const pathText = document.getElementById('path-text');
+        
+        if(sub === 'Med') {
+            pathText.innerHTML = "Based on your <b>Grade " + grade + "</b> and strength in Biology, you are a perfect candidate for <b>Medical Sciences, Clinical Medicine, or Nursing</b>. You have the 'molecules' for a healthcare hero.";
+        } else if(sub === 'Tech') {
+            pathText.innerHTML = "With <b>Grade " + grade + "</b> and strength in Mathematics, you are built for <b>Software Engineering, ICT, or Architecture</b>. You should join our Full-Stack Academy course.";
+        } else {
+            pathText.innerHTML = "Your <b>Grade " + grade + "</b> shows creative and linguistic strength. You are suited for <b>Law, Media Studies, or Digital Marketing</b>.";
+        }
+
+        document.getElementById('ai-result-box').style.display = 'block';
     }
+</script>
 
-    let report = "";
-
-    // DEEP LOGIC FOR ALL COURSES IN THE WORLD
-    if (grade === "A" || grade === "B") {
-        if (molecule === "Biology") report = "<b>Degree Level:</b> You qualify for Medicine & Surgery, Pharmacy, or Dental Surgery. You have the 'Bio-Molecules' for top-tier Hospital Management.";
-        else if (molecule === "Math") report = "<b>Degree Level:</b> You qualify for Software Engineering, Aeronautical Engineering, or Data Science. The world of Big Tech awaits your logic.";
-        else report = "<b>Degree Level:</b> You qualify for International Relations, Law, or Actuarial Science. Your profile fits Global Leadership.";
-    } 
-    else if (grade === "C") {
-        if (molecule === "Biology") report = "<b>Diploma Level:</b> You qualify for Nursing, Clinical Medicine, or Medical Lab Technology. These are the most marketable medical paths in Kenya.";
-        else if (molecule === "Math") report = "<b>Diploma Level:</b> You qualify for Electrical Engineering, ICT, or Computer Science. You can bridge to a Degree later.";
-        else report = "<b>Diploma Level:</b> You qualify for Journalism, Business Management, or Hospitality. You have strong 'Market Molecules'.";
-    } 
-    else if (grade === "D") {
-        if (molecule === "Biology") report = "<b>Certificate Level:</b> You qualify for Community Health, Nutrition, or Animal Health. You can start here and climb to a Diploma.";
-        else if (molecule === "Math") report = "<b>Certificate Level:</b> You qualify for Automotive Engineering, Plumbing, or Solar Installation. These are high-paying technical skills.";
-        else report = "<b>Certificate Level:</b> You qualify for Catering, Hairdressing, or Secretarial Studies. You are built for the Service Industry.";
-    } 
-    else {
-        report = "<b>Artisan Level:</b> Grade E is a starting point. You qualify for Artisan courses in Masonry, Carpentry, or Garment Making. These skills are the foundation of all construction and fashion industries.";
-    }
-
-    document.getElementById('analysisOutput').innerHTML = report;
-    document.getElementById('ai-result-box').style.display = "block";
-}
-            </script>
-            
+</body>
+    </html>
+    
