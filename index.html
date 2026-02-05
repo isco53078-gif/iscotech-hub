@@ -3,157 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IscoTech Hub | Official 3-Dept Portal</title>
+    <title>IscoTech Hub | Automated Career & Academy Portal</title>
+    <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
     <style>
-        :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; --light: #f4f7f6; }
-        body { font-family: 'Poppins', sans-serif; background: var(--light); margin: 0; color: #333; line-height: 1.6; }
-        header { background: var(--navy); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--gold); }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .dept-title { color: var(--navy); border-left: 10px solid var(--gold); padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-weight: 900; }
-        .card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-top: 20px; display: flex; flex-wrap: wrap; gap: 20px; }
-        .content-area { flex: 1; min-width: 300px; }
-        .form-area { flex: 0.8; min-width: 300px; background: #f9f9f9; padding: 20px; border-radius: 15px; border: 1px solid #ddd; }
-        input, select { width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
-        .btn { display: inline-block; width: 100%; padding: 12px; background: var(--mpesa); color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; border: none; cursor: pointer; }
-        table { width: 100%; border-collapse: collapse; font-size: 0.9em; margin-top: 10px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background: var(--navy); color: white; }
-        .pay-step { background: #fff3cd; padding: 15px; border-radius: 10px; border: 2px dashed #fbc02d; text-align: center; margin-bottom: 15px; }
-        #ai-result-box { display: none; margin-top: 20px; padding: 20px; background: #d4edda; border-radius: 10px; border-left: 5px solid var(--mpesa); }
+        :root { --navy: #000814; --gold: #ffc300; --mpesa: #28a745; --light: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); margin: 0; }
+        header { background: var(--navy); color: white; padding: 50px 20px; text-align: center; border-bottom: 4px solid var(--gold); }
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        h2 { color: var(--navy); border-left: 5px solid var(--gold); padding-left: 15px; margin-top: 0; }
+        .fee-tag { background: #eef2ff; color: #4338ca; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; }
+        label { display: block; margin: 15px 0 5px; font-weight: 600; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1em; box-sizing: border-box; }
+        .btn { width: 100%; padding: 15px; background: var(--mpesa); color: white; border: none; border-radius: 8px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 15px; }
+        .btn:hover { background: #218838; transform: translateY(-2px); }
+        .status { text-align: center; font-size: 0.9em; margin-top: 10px; color: #555; font-style: italic; }
+        .results-box { display: none; margin-top: 25px; padding: 20px; background: #f0fff4; border: 2px dashed var(--mpesa); border-radius: 10px; }
+        .course-item { background: white; padding: 10px; margin-bottom: 8px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); list-style: none; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>ISCOTECH HUB</h1>
-    <p style="color:var(--gold);">Innovation | Career AI | Government Placements</p>
-    <p>☀️ Day Shift | 🌙 Night Shift (Online)</p>
+    <h1>ISCOTECH HUB PORTAL</h1>
+    <p>Empowering Your Future through ICT & Automation</p>
 </header>
 
 <div class="container">
 
-    <h2 class="dept-title">1. IscoTech Academy</h2>
     <div class="card">
-        <div class="content-area">
-            <h3>ICT & Coding Courses</h3>
-            <table>
-                <tr><th>Course</th><th>Duration</th><th>Online Fee</th></tr>
-                <tr><td>Full-Stack Dev</td><td>4 Months</td><td>4,200/-</td></tr>
-                <tr><td>Python Coding</td><td>3 Months</td><td>2,500/-</td></tr>
-                <tr><td>Web Engineering</td><td>2 Months</td><td>2,200/-</td></tr>
-                <tr><td>ICT Masterclass</td><td>1 Month</td><td>2,800/-</td></tr>
-                <tr><td>Graphic Design</td><td>6 Weeks</td><td>1,400/-</td></tr>
-                <tr><td>AI Speed Lessons</td><td>1 Week</td><td>400/-</td></tr>
-            </table>
-        </div>
-        <div class="form-area">
-            <h4>Enrollment & Payment</h4>
-            <div class="pay-step">
-                <strong>Reg Fee: KES 50</strong><br>
-                Paybill: <b>714888</b> | Acc: <b>448941</b>
-            </div>
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="WhatsApp Number">
-            <button class="btn" onclick="location.href='https://wa.me/254746939408?text=I_have_paid_50_for_Academy'">Submit & Pay</button>
+        <h2>1. Career AI Analysis <span class="fee-tag">KES 50</span></h2>
+        <p>Get 7 high-demand career paths based on your grade.</p>
+        
+        <label>Your Mean Grade:</label>
+        <select id="careerGrade">
+            <option value="C">C (Plain)</option>
+            <option value="C-">C- (Minus)</option>
+            <option value="D">D (Plain/Plus)</option>
+        </select>
+
+        <label>M-Pesa Phone Number:</label>
+        <input type="number" id="careerPhone" placeholder="2547XXXXXXXX">
+        
+        <button class="btn" onclick="triggerPayment(50, 'careerPhone', 'career-output', unlockCareerResults)">
+            PAY & UNLOCK ANALYSIS
+        </button>
+        <div id="status-careerPhone" class="status"></div>
+
+        <div id="career-output" class="results-box">
+            <h3 style="color:var(--mpesa);">Analysis Results ✅</h3>
+            <ul id="courseList" style="padding:0;"></ul>
+            <button class="btn" style="background:var(--navy); margin-top:15px;" onclick="window.print()">Download Results</button>
         </div>
     </div>
 
-    <h2 class="dept-title">2. KRA (Caribbean) & KUCCPS</h2>
     <div class="card">
-        <div class="content-area">
-            <h3>Government Services</h3>
-            <p>Fast KRA PIN generation, recovery, and KUCCPS/HEF placement services.</p>
-            <p><b>Pay the unlock fee to start your application process immediately.</b></p>
-        </div>
-        <div class="form-area">
-            <h4>Unlock Service</h4>
-            <div class="pay-step">
-                <strong>Unlock Fee: KES 20</strong><br>
-                Paybill: <b>714888</b> | Acc: <b>448941</b>
-            </div>
-            <input type="text" placeholder="Full Name">
-            <input type="text" id="kraMpesa" placeholder="M-Pesa Code">
-            <button class="btn" onclick="location.href='https://wa.me/254746939408?text=I_paid_20_to_unlock_KRA'">Pay to Unlock</button>
+        <h2>2. IscoTech Academy <span class="fee-tag">KES 50</span></h2>
+        <p>Enroll in Masterclasses: Python, Full-Stack Web Dev, or Cybersecurity.</p>
+        
+        <label>Select Course:</label>
+        <select id="academyCourse">
+            <option>Python Data Science</option>
+            <option>Full-Stack Web Development</option>
+            <option>Cybersecurity Essentials</option>
+        </select>
+
+        <label>M-Pesa Phone Number:</label>
+        <input type="number" id="academyPhone" placeholder="2547XXXXXXXX">
+        
+        <button class="btn" onclick="triggerPayment(50, 'academyPhone', 'academy-output')">
+            PAY & ENROLL NOW
+        </button>
+        <div id="status-academyPhone" class="status"></div>
+
+        <div id="academy-output" class="results-box">
+            <h3 style="color:var(--mpesa);">Enrollment Successful ✅</h3>
+            <p>Welcome! Your student ID has been generated. Please join the student portal below:</p>
+            <a href="https://wa.me/254746939408?text=I_have_paid_for_Academy" class="btn" style="background:var(--navy); text-decoration:none;">ACCESS CLASSROOM</a>
         </div>
     </div>
 
-    <h2 class="dept-title">3. Automated Career AI Analysis</h2>
     <div class="card">
-        <div class="content-area">
-            <h3>Deep Molecule Analysis</h3>
-            <div class="pay-step">
-                <strong>Analysis Fee: KES 50</strong><br>
-                Paybill: <b>714888</b> | Acc: <b>448941</b>
-            </div>
-            
-            <label>Select Mean Grade:</label>
-            <select id="meanGrade">
-                <option value="">-- Choose Grade --</option>
-                <option value="A/B">A or B</option>
-                <option value="C+">C+</option><option value="C">C (Plain)</option><option value="C-">C-</option>
-                <option value="D">D</option><option value="E">E</option>
-            </select>
+        <h2>3. KUCCPS / HEF / KRA <span class="fee-tag">KES 20</span></h2>
+        <p>Unlock fast-track assistance for government portal services.</p>
+        
+        <label>M-Pesa Phone Number:</label>
+        <input type="number" id="govtPhone" placeholder="2547XXXXXXXX">
+        
+        <button class="btn" onclick="triggerPayment(20, 'govtPhone', 'govt-output')">
+            PAY & UNLOCK SERVICE
+        </button>
+        <div id="status-govtPhone" class="status"></div>
 
-            <label>Subject Strength:</label>
-            <select id="subjectMolecule">
-                <option value="">-- Choose Strength --</option>
-                <option value="Biology">Biology/Chem</option>
-                <option value="Math">Math/Physics</option>
-                <option value="Arts">English/Business</option>
-            </select>
-
-            <input type="text" id="txnCode" placeholder="Enter Transaction Code">
-            <button class="btn" style="background:var(--navy); margin-top:10px;" onclick="runAnalysis()">UNLOCK 6-7 RECOMMENDATIONS</button>
-
-            <div id="ai-result-box">
-                <h3 style="margin-top:0;">Top Career Recommendations:</h3>
-                <ul id="analysisOutput" style="line-height:1.8;"></ul>
-                <hr>
-                <p style="font-size:0.85em;"><i>Official IscoTech Career Roadmap. Save these results below.</i></p>
-            </div>
-        </div>
-        <div class="form-area">
-            <h4>Save Results to WhatsApp</h4>
-            <input type="text" id="saveName" placeholder="Full Name">
-            <input type="text" id="savePhone" placeholder="WhatsApp Number">
-            <button class="btn" onclick="saveToWhatsApp()">Send to My WhatsApp</button>
+        <div id="govt-output" class="results-box">
+            <h3 style="color:var(--mpesa);">Service Unlocked ✅</h3>
+            <p>An agent is ready to assist you. Click the button below to start your application.</p>
+            <a href="https://wa.me/254746939408?text=Service_Unlocked_Help_Me" class="btn" style="background:var(--navy); text-decoration:none;">CHAT WITH AGENT</a>
         </div>
     </div>
 
 </div>
 
 <script>
-function runAnalysis() {
-    const grade = document.getElementById('meanGrade').value;
-    const molecule = document.getElementById('subjectMolecule').value;
-    const txn = document.getElementById('txnCode').value;
-    if (!grade || !molecule || !txn) { alert("Please enter all details and the 50/- code."); return; }
+    // INITIALIZE INTASEND WITH YOUR LIVE KEY
+    const intasend = new window.IntaSend({
+        publicAPIKey: "ISPubKey_live_546f4dab-3bfd-45d1-9c94-cb3d3767e690",
+        live: true 
+    });
 
-    let courses = [];
-    if (grade === "C") {
-        courses = ["Dip. Clinical Medicine", "Dip. Nursing", "Dip. Pharmacy", "Dip. Medical Imaging", "Dip. Physiotherapy", "Dip. Dental Tech"];
-    } else if (grade === "C-") {
-        courses = ["Dip. Health Records", "Dip. Community Health", "Dip. Nutrition", "Dip. Building Tech", "Dip. Automotive Engineering", "Cert. in ICT & Coding"];
-    } else if (grade === "C+") {
-        courses = ["B.Sc. Nursing", "B.Sc. IT", "Dip. Clinical Medicine", "B.Sc. Public Health", "Dip. Pharmacy", "B.Sc. Computer Science"];
-    } else if (grade === "A/B") {
-        courses = ["Medicine & Surgery", "Aeronautical Engineering", "Law (LLB)", "Pharmacy (Degree)", "Data Science", "Architecture"];
-    } else {
-        courses = ["Cert. in Plumbing", "Cert. in Automotive", "Cert. in Electrical", "Cert. in Masonry", "Cert. in Hairdressing", "Cert. in ICT Basics"];
+    function triggerPayment(amount, phoneInputId, outputId, extraFunction) {
+        const phone = document.getElementById(phoneInputId).value;
+        const statusBox = document.getElementById('status-' + phoneInputId);
+
+        if(!phone || phone.length < 10) {
+            alert("Please enter a valid M-Pesa number (e.g., 254712345678)");
+            return;
+        }
+
+        statusBox.innerHTML = "Requesting M-Pesa PIN prompt... 📲";
+
+        intasend.run({
+            amount: amount,
+            currency: "KES",
+            phone_number: phone,
+            method: "M-PESA"
+        })
+        .on("COMPLETE", (results) => {
+            statusBox.innerHTML = "Payment Successful! ✅";
+            document.getElementById(outputId).style.display = "block";
+            document.getElementById(outputId).scrollIntoView({ behavior: 'smooth' });
+            if(extraFunction) extraFunction();
+        })
+        .on("FAILED", () => {
+            statusBox.innerHTML = "Payment failed. Please try again. ❌";
+        })
+        .on("IN-PROGRESS", () => {
+            statusBox.innerHTML = "Check your phone and enter M-Pesa PIN... ⏳";
+        });
     }
 
-    const output = document.getElementById('analysisOutput');
-    output.innerHTML = "";
-    courses.forEach(c => { output.innerHTML += "<li><b>" + c + "</b></li>"; });
-    document.getElementById('ai-result-box').style.display = "block";
-}
+    function unlockCareerResults() {
+        const grade = document.getElementById('careerGrade').value;
+        const list = document.getElementById('courseList');
+        let courses = [];
 
-function saveToWhatsApp() {
-    const name = document.getElementById('saveName').value;
-    const phone = document.getElementById('savePhone').value;
-    if(!name || !phone) { alert("Enter details to save!"); return; }
-    window.location.href = `https://wa.me/254746939408?text=Hello_I_am_${name}_I_want_to_save_my_results`;
-}
+        if (grade === "C") {
+            courses = ["Dip. ICT & Cyber Security", "Dip. Clinical Medicine", "Dip. Software Engineering", "Dip. Pharmacy", "Dip. Electrical Engineering", "Dip. Business Information Technology", "Dip. Nursing"];
+        } else if (grade === "C-") {
+            courses = ["Dip. Health Records", "Cert. in Computer Science", "Dip. Community Health", "Dip. Automotive Tech", "Dip. Building Construction", "Cert. in Web Design", "Dip. Hospitality Management"];
+        } else {
+            courses = ["Cert. in ICT Basics", "Cert. in Plumbing", "Cert. in Electrical Installation", "Cert. in Graphic Design", "Artisan in Masonry", "Cert. in Food & Beverage", "Cert. in Hairdressing"];
+        }
+
+        list.innerHTML = "";
+        courses.forEach(course => {
+            list.innerHTML += `<li class="course-item">⭐ <b>${course}</b></li>`;
+        });
+    }
 </script>
+
 </body>
 </html>
