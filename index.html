@@ -3,163 +3,453 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nya Inda Academy | Your Future is Bright</title>
-    <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>IscoTech Express Hub | Fast Cyber & Digital Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #000814; --gold: #ffc300; --mpesa: #28a745; --text-light: #f4f4f4; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: #fafafa; color: #333; line-height: 1.6; }
-        
-        /* Hero Section */
-        header { 
-            background: linear-gradient(rgba(0,8,20,0.9), rgba(0,8,20,0.9)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center;
-            color: white; padding: 80px 20px; text-align: center; border-bottom: 6px solid var(--gold);
+        :root {
+            --primary: #000814;
+            --gold: #ffc300;
+            --mpesa: #28a745;
+            --whatsapp: #25d366;
+            --card-bg: #ffffff;
+            --body-bg: #f4f6f9;
         }
-        .hero-text h1 { font-size: 2.8em; margin-bottom: 10px; color: var(--gold); }
-        .hero-text p { font-size: 1.2em; max-width: 800px; margin: auto; }
 
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .section-title { text-align: center; margin: 40px 0; font-size: 2em; color: var(--primary); }
-
-        /* Card Styling */
-        .card { background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 50px; overflow: hidden; }
-        .card-header { background: var(--primary); color: white; padding: 20px; text-align: center; }
-        .card-body { padding: 30px; }
-
-        /* Academy Courses Grid */
-        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .course-item { border: 1px solid #eee; padding: 15px; border-radius: 10px; text-align: center; background: #fffdf0; }
-        .course-item h4 { margin: 10px 0; color: #003566; }
-        
-        /* Form Styling */
-        .input-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
-        input, select, textarea { width: 100%; padding: 12px; border: 1.5px solid #ddd; border-radius: 10px; font-family: inherit; box-sizing: border-box; }
-        
-        .btn-pay { 
-            background: var(--mpesa); color: white; padding: 18px; width: 100%; border: none; 
-            border-radius: 12px; font-size: 1.2em; font-weight: bold; cursor: pointer; transition: 0.3s;
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--body-bg);
+            color: #333;
+            line-height: 1.6;
         }
-        .btn-pay:hover { background: #218838; transform: scale(1.02); }
 
-        .footer-info { text-align: center; padding: 40px; background: var(--primary); color: white; margin-top: 50px; }
-        .hidden-result { display: none; padding: 20px; background: #e9f7ef; border-radius: 15px; margin-top: 20px; border: 2px dashed var(--mpesa); }
+        /* Top Privacy Notice Banner */
+        .trust-banner {
+            background: #001d3d;
+            color: #ffc300;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(rgba(0, 8, 20, 0.92), rgba(0, 8, 20, 0.92)), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .hero-text h1 {
+            font-size: 2.4em;
+            margin: 0 0 10px 0;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero-text p {
+            font-size: 1.1em;
+            max-width: 750px;
+            margin: auto;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        /* Card Layout */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            margin-bottom: 35px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card-header {
+            background: var(--primary);
+            color: white;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.3em;
+            color: var(--gold);
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        /* Service Grid Options */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .service-box {
+            border: 2px solid #edf2f7;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            background: #f8fafc;
+            transition: 0.3s;
+        }
+
+        .service-box h4 {
+            margin: 5px 0;
+            color: #003566;
+            font-size: 1rem;
+        }
+
+        .service-box p {
+            margin: 0;
+            color: var(--mpesa);
+            font-weight: bold;
+        }
+
+        /* Form Controls */
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.92rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #cbd5e0;
+            border-radius: 8px;
+            font-family: inherit;
+            box-sizing: border-box;
+            font-size: 0.95rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .flex-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .flex-group .input-group {
+            flex: 1;
+        }
+
+        /* Payment Box (Safaricom Till Display) */
+        .payment-box {
+            background: #eefbf2;
+            border: 2px dashed var(--mpesa);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 25px 0 15px 0;
+        }
+
+        .payment-box h3 {
+            margin: 0 0 10px 0;
+            color: #1b4332;
+        }
+
+        .till-display {
+            font-size: 2.2em;
+            font-weight: 800;
+            color: var(--mpesa);
+            letter-spacing: 2px;
+            margin: 10px 0;
+        }
+
+        .btn-copy {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+        }
+
+        .btn-submit {
+            background: var(--mpesa);
+            color: white;
+            padding: 16px;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #218838;
+        }
+
+        .btn-wa-direct {
+            background: var(--whatsapp);
+            color: white;
+            padding: 14px;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Footer */
+        .footer-info {
+            text-align: center;
+            padding: 35px 20px;
+            background: var(--primary);
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+            color: #cbd5e0;
+        }
+
+        /* Floating WhatsApp Icon */
+        .float-wa {
+            position: fixed;
+            width: 55px;
+            height: 55px;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 28px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .flex-group { flex-direction: column; gap: 0; }
+            .hero-text h1 { font-size: 1.8em; }
+        }
     </style>
 </head>
 <body>
 
+<!-- Data Privacy Notice -->
+<div class="trust-banner">
+    🔒 <b>100% Confidentiality & Data Protection Guaranteed:</b> Your IDs, KRA Credentials & Documents are Encrypted and Strictly Used for Requested Portal Submissions Only.
+</div>
+
 <header>
     <div class="hero-text">
-        <h1>WELCOME TO ISCOTECH ACADEMY</h1>
-        <p><b>"Your future is bright, no matter your grade!"</b><br>
-        Are you stranded? Not sure what to do with your C, D, or E? <br>
-        Technology is evolving. Whether you want to study online at night or physical classes during the day, we give you the skills to earn. A one-month course can change your life!</p>
+        <h1>ISCOTECH EXPRESS HUB</h1>
+        <p>Instant Cyber Portal Help, Document Processing, Web Design & Tech Support</p>
     </div>
 </header>
 
 <div class="container">
 
+    <!-- SECTION 1: TOP PRIORITY CYBER & PORTAL DESK -->
     <div class="card">
-        <div class="card-header"><h2>1. Our Professional Courses</h2></div>
+        <div class="card-header">
+            <h2>1. Cyber & Government Portal Services</h2>
+            <span style="background: var(--gold); color: #000; padding: 4px 10px; border-radius: 20px; font-weight: bold; font-size: 0.8rem;">Priority Hub</span>
+        </div>
         <div class="card-body">
-            <p>We offer <b>Day & Night</b> classes (Online) and <b>Physical Classes</b> (Homa Bay). <i>Fee: KES 20 registration.</i></p>
-            <div class="course-grid">
-                <div class="course-item"><h4>Python for Beginners</h4><p>1 Month | KES 2,500</p></div>
-                <div class="course-item"><h4>Full-Stack Web Dev</h4><p>3 Months | KES 5,000</p></div>
-                <div class="course-item"><h4>Cyber Security</h4><p>2 Months | KES 4,000</p></div>
-                <div class="course-item"><h4>Graphic Design</h4><p>1 Month | KES 2,000</p></div>
-            </div>
             
-            <div class="input-group">
-                <label>Choose your Course & Mode:</label>
-                <select id="aca_course">
-                    <option>Python (Online Night)</option>
-                    <option>Python (Physical Day)</option>
-                    <option>Web Dev (Online Night)</option>
-                    <option>Graphic Design (Physical Day)</option>
-                </select>
+            <div class="service-grid">
+                <div class="service-box"><h4>KRA PIN & Filing</h4><p>KES 50</p></div>
+                <div class="service-box"><h4>KUCCPS Placement</h4><p>KES 100</p></div>
+                <div class="service-box"><h4>HEF / HELB Loan</h4><p>KES 100</p></div>
+                <div class="service-box"><h4>SHA & eCitizen</h4><p>KES 100</p></div>
+                <div class="service-box"><h4>Professional CV</h4><p>KES 150</p></div>
             </div>
-            <div class="input-group"><label>Your Full Name:</label><input type="text" id="aca_name"></div>
-            <div class="input-group"><label>M-Pesa Number:</label><input type="number" id="aca_phone" placeholder="2547XXXXXXXX"></div>
-            
-            <button class="btn-pay" onclick="handlePayment(20, 'aca_phone', 'aca_msg')">SUBMIT & PAY REGISTRATION (20/-)</button>
-            <div id="aca_msg" class="hidden-result">✅ Welcome to the Tech Revolution! We will contact you shortly to start your journey.</div>
+
+            <form id="cyberForm" onsubmit="submitCyberRequest(event)">
+                <div class="input-group">
+                    <label>Select Required Service:</label>
+                    <select id="cyb_service" required>
+                        <option value="KRA PIN Registration / Nil Returns Filing (KES 50)">KRA PIN Registration / Nil Returns (KES 50)</option>
+                        <option value="KUCCPS Course Placement / Application (KES 100)">KUCCPS Course Placement (KES 100)</option>
+                        <option value="HEF / HELB Higher Education Loan Application (KES 100)">HEF / HELB Scholarship & Loan Application (KES 100)</option>
+                        <option value="SHA / eCitizen Portal Assistance (KES 100)">SHA (Social Health) / eCitizen Registration (KES 100)</option>
+                        <option value="Professional CV & Cover Letter Drafting (KES 150)">Professional CV & Cover Letter Revamp (KES 150)</option>
+                    </select>
+                </div>
+
+                <div class="flex-group">
+                    <div class="input-group">
+                        <label>Full Name:</label>
+                        <input type="text" id="cyb_fullname" placeholder="e.g. John Omondi" required>
+                    </div>
+                    <div class="input-group">
+                        <label>National ID Number / Index No:</label>
+                        <input type="text" id="cyb_idno" placeholder="e.g. 12345678 or Index" required>
+                    </div>
+                </div>
+
+                <div class="flex-group">
+                    <div class="input-group">
+                        <label>Active WhatsApp Number (For receiving document):</label>
+                        <input type="tel" id="cyb_wa" placeholder="07XXXXXXXX" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address (Optional):</label>
+                        <input type="email" id="cyb_email" placeholder="example@gmail.com">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Additional Instructions / Credentials (e.g. KRA Password, Course Choice, etc.):</label>
+                    <textarea id="cyb_notes" rows="2" placeholder="Write any specific detail our agent needs to process your document..."></textarea>
+                </div>
+
+                <!-- Safaricom Buy Goods Payment Box -->
+                <div class="payment-box">
+                    <h3>💳 Payment Details (M-Pesa Buy Goods)</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #444;">Pay to our Safaricom Buy Goods Till Number:</p>
+                    <div class="till-display" id="tillNum">1582809</div>
+                    <p style="margin: 0 0 10px 0; font-weight: 600; color: #2d3748;">Merchant Name: <b>BONFACE DEDE</b></p>
+                    <button type="button" class="btn-copy" onclick="copyTill()">📋 Click to Copy Till Number</button>
+                    <p style="font-size: 0.82rem; color: #555; margin: 5px 0 0 0;"><i>Note: You can pay now or pay after receiving a screenshot proof on WhatsApp!</i></p>
+                </div>
+
+                <button type="submit" class="btn-submit">SUBMIT DETAILS VIA WHATSAPP</button>
+            </form>
+
         </div>
     </div>
 
+    <!-- SECTION 2: BUSINESS WEB DESIGN & TECH SETUP -->
     <div class="card">
-        <div class="card-header"><h2>2. AI Career Roadmap Analysis</h2></div>
+        <div class="card-header">
+            <h2>2. Business Web Design & M-Pesa Setup</h2>
+        </div>
         <div class="card-body">
-            <p>Don't be discouraged! Every grade has a path. Tell us your details and let our AI find the 7 best careers for you. <i>Fee: KES 50.</i></p>
-            
-            <div class="input-group"><label>Full Name:</label><input type="text" id="car_name"></div>
-            <div style="display: flex; gap: 10px;">
-                <div class="input-group" style="flex:1;"><label>Mean Grade:</label><select id="car_grade"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></div>
-                <div class="input-group" style="flex:1;"><label>Index Number:</label><input type="number" id="car_index"></div>
+            <p>Do you run a shop, business, or organization? We build clean one-page landing pages with M-Pesa payment features and Google Maps listings.</p>
+            <div class="flex-group">
+                <div class="input-group">
+                    <label>Your Business Name:</label>
+                    <input type="text" id="biz_name" placeholder="e.g. Highers Cyber Cafe">
+                </div>
+                <div class="input-group">
+                    <label>Phone Number:</label>
+                    <input type="tel" id="biz_phone" placeholder="07XXXXXXXX">
+                </div>
             </div>
-            <div class="input-group"><label>List your 3 best subjects:</label><textarea id="car_subs" rows="2"></textarea></div>
-            <div class="input-group"><label>M-Pesa Number:</label><input type="number" id="car_phone" placeholder="2547XXXXXXXX"></div>
-            
-            <button class="btn-pay" onclick="handlePayment(50, 'car_phone', 'car_msg', 'career')">REVEAL MY CAREER PATH (50/-)</button>
-            <div id="car_msg" class="hidden-result"><h3>Your Career Analysis ✅</h3><ul id="career_list"></ul></div>
+            <a href="#" onclick="requestBizConsultation(event)" class="btn-wa-direct">
+                💬 Request Free Consultation on WhatsApp
+            </a>
         </div>
     </div>
 
+    <!-- SECTION 3: QUICK TECH SUPPORT -->
     <div class="card">
-        <div class="card-header"><h2>3. KRA & Government Portal Services</h2></div>
+        <div class="card-header">
+            <h2>3. Document Typing & Tech Support</h2>
+        </div>
         <div class="card-body">
-            <p>Fast and supportive help for KRA PINs, KUCCPS, and HEF. <i>Fee: KES 20.</i></p>
-            <div class="input-group"><label>Full Name & ID Number:</label><input type="text" id="gov_details" placeholder="John Doe - 12345678"></div>
-            <div class="input-group"><label>Active WhatsApp Number:</label><input type="number" id="gov_wa"></div>
-            <div class="input-group"><label>Current Physical Address (House/Town/County):</label><input type="text" id="gov_loc"></div>
-            <div class="input-group"><label>Email Address:</label><input type="email" id="gov_email"></div>
-            <div class="input-group"><label>M-Pesa Number:</label><input type="number" id="gov_phone" placeholder="2547XXXXXXXX"></div>
-            
-            <button class="btn-pay" onclick="handlePayment(20, 'gov_phone', 'gov_msg')">SUBMIT TO AGENT (20/-)</button>
-            <div id="gov_msg" class="hidden-result">✅ Details Received! Our agent will process your request and send the document to your email/WhatsApp shortly.</div>
+            <p>Need urgent document formatting, project typing, or computer software troubleshooting?</p>
+            <a href="https://wa.me/254746939408?text=Hello%20IscoTech,%20I%20need%20urgent%20tech%20support/document%20typing%20help." target="_blank" class="btn-wa-direct" style="background: var(--primary);">
+                🔧 Chat with Agent for Immediate Help
+            </a>
         </div>
     </div>
 
 </div>
 
+<!-- Footer -->
 <div class="footer-info">
-    <h3>IscoTech Hub | Created by Isco</h3>
+    <h3>IscoTech Express Hub</h3>
+    <p>Owner & Developer: <b>Bonface Omondi Dede (Isco)</b></p>
     <p>📧 isco53078@gmail.com | 📞 0746939408</p>
-    <p>&copy; 2026 Innovation through Technology.</p>
+    <p>&copy; 2026 Innovation & Digital Services. All rights reserved.</p>
 </div>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/254746939408?text=Hello%20IscoTech,%20I%20have%20an%20inquiry%20regarding%20your%20services." class="float-wa" target="_blank" title="Chat on WhatsApp">
+    💬
+</a>
 
 <script>
-    const intasend = new window.IntaSend({
-        publicAPIKey: "ISPubKey_live_546f4dab-3bfd-45d1-9c94-cb3d3767e690",
-        live: true 
-    });
-
-    function handlePayment(amt, phoneId, resultId, type) {
-        const phone = document.getElementById(phoneId).value;
-        if (!phone || phone.length < 10) { alert("Please enter your M-Pesa number first!"); return; }
-
-        intasend.run({
-            amount: amt, currency: "KES", phone_number: phone, method: "M-PESA", api_ref: "448941"
-        })
-        .on("COMPLETE", (results) => {
-            document.getElementById(resultId).style.display = "block";
-            document.getElementById(resultId).scrollIntoView();
-            if(type === 'career') generateCareers();
-        })
-        .on("FAILED", () => alert("Payment cancelled or failed."));
+    function copyTill() {
+        navigator.clipboard.writeText("1582809");
+        alert("Till Number 1582809 copied to clipboard! Open M-Pesa -> Buy Goods to pay.");
     }
 
-    function generateCareers() {
-        const grade = document.getElementById('car_grade').value;
-        const list = document.getElementById('career_list');
-        let options = (grade === 'A' || grade === 'B') ? ["Medicine", "Software Engineering", "Law", "Architecture", "Data Science", "Pharmacy", "Aviation"] :
-                      (grade === 'C') ? ["Nursing", "ICT & Computing", "Clinical Medicine", "Electrical Engineering", "Journalism", "Agribusiness", "Business IT"] :
-                      ["Cybersecurity Cert", "Plumbing Technology", "Automotive Engineering", "Hospitality & Tourism", "Fashion Design", "Building Construction", "Graphic Design"];
+    function submitCyberRequest(e) {
+        e.preventDefault();
         
-        list.innerHTML = "";
-        options.forEach(o => list.innerHTML += "<li><b>" + o + "</b></li>");
+        const service = document.getElementById('cyb_service').value;
+        const name = document.getElementById('cyb_fullname').value;
+        const idno = document.getElementById('cyb_idno').value;
+        const wa = document.getElementById('cyb_wa').value;
+        const email = document.getElementById('cyb_email').value || 'N/A';
+        const notes = document.getElementById('cyb_notes').value || 'None';
+
+        const message = `*NEW SERVICE REQUEST - ISCOTECH EXPRESS*%0A%0A` +
+                        `*Service:* ${service}%0A` +
+                        `*Name:* ${name}%0A` +
+                        `*ID/Index:* ${idno}%0A` +
+                        `*WhatsApp:* ${wa}%0A` +
+                        `*Email:* ${email}%0A` +
+                        `*Instructions/Notes:* ${notes}%0A%0A` +
+                        `*Payment Till:* 1582809 (Bonface Dede)`;
+
+        window.open(`https://wa.me/254746939408?text=${message}`, '_blank');
+    }
+
+    function requestBizConsultation(e) {
+        e.preventDefault();
+        const bizName = document.getElementById('biz_name').value || 'Business Owner';
+        const phone = document.getElementById('biz_phone').value || 'N/A';
+
+        const message = `*WEB DESIGN & M-PESA SETUP INQUIRY*%0A%0A` +
+                        `*Business Name:* ${bizName}%0A` +
+                        `*Phone:* ${phone}%0A%0A` +
+                        `Hello Isco, I want to inquire about building a website and setting up M-Pesa integration for my business.`;
+
+        window.open(`https://wa.me/254746939408?text=${message}`, '_blank');
     }
 </script>
+
 </body>
-    </html>
+</html>
